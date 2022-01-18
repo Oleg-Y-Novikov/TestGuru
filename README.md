@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# TestGuru application
 
-Things you may want to cover:
+The TestGuru application is designed to create, manage and run various tests.
+Author: [Oleg Novikov](https://github.com/Oleg-Y-Novikov).
 
-* Ruby version
+## Getting started
 
-* System dependencies
+To get started with the app, clone the repo and then install the needed gems:
 
-* Configuration
+```
+$ rvm install 2.7.2
+$ gem install rails -v 6.1.4
+$ bundle install
+```
 
-* Database creation
+List of required models:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+User, Test
+```
