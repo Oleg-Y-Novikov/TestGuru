@@ -18,5 +18,5 @@ $ bundle install
 List of required models:
 
 ```
-User, Test
+User, Test, Question, Answer
 ```
