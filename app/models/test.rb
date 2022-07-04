@@ -6,7 +6,7 @@ class Test < ApplicationRecord
   def self.test_title_desc(category_title)
     join_categories = 'JOIN categories ON tests.category_id = categories.id'
     joins(join_categories).where(
-      'categories.title LIKE :title', title: "#{category_title}%"
+      'categories.title LIKE :title', title: "#{Category.sanitize_sql_like(category_title)}%"
     ).order(title: :desc).pluck(:title)
   end
 end
