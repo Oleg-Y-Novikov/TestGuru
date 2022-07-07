@@ -5,9 +5,8 @@ class User < ApplicationRecord
   has_many :tests_user, dependent: :destroy
   has_many :tests, through: :tests_user, dependent: :destroy
 
-  # возвращает список всех Тестов, которые проходит или когда-либо проходил Пользователь
+  # возвращает список всех Тестов, которые проходит или когда-либо проходил Пользователь фильтруя по сложности
   def list_all_tests(level)
-    join_tests_users = 'JOIN tests_users ON tests.id = tests_users.test_id'
-    Test.joins(join_tests_users).where(tests_users: { user_id: id }).where(tests: { level: level })
+    tests.where(level: level)
   end
 end
