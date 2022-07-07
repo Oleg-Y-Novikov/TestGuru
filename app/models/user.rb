@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  # возвращает список всех Тестов, которые проходит или когда-либо проходил Пользователь
+  has_many :tests_author, class_name: 'Test', foreign_key: :author_id, dependent: :destroy
+  has_many :tests_user, dependent: :destroy
+  has_many :tests, through: :tests_user, dependent: :destroy
+
+  # возвращает список всех Тестов, которые проходит или когда-либо проходил Пользователь фильтруя по сложности
   def list_all_tests(level)
-    join_users_tests = 'JOIN users_tests ON tests.id = users_tests.test_id'
-    Test.joins(join_users_tests).where(users_tests: { user_id: id }).where(tests: { level: level })
+    tests.where(level: level)
   end
 end
