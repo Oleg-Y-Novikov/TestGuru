@@ -3,10 +3,10 @@
 class Test < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :category
-  has_many :questions
 
-  has_many :tests_user
-  has_many :users, through: :tests_user
+  has_many :questions, dependent: :destroy
+  has_many :tests_user, dependent: :destroy
+  has_many :users, through: :tests_user, dependent: :destroy
 
   # возвращает отсортированный по убыванию массив названий всех Тестов
   # у которых Категория называется определённым образом
