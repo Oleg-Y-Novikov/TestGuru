@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Test < ApplicationRecord
+  scope :easy_level,   -> { where(level: 0..1) }
+  scope :medium_level, -> { where(level: 2..4) }
+  scope :hard_level,   -> { where(level: 4..) }
+
   belongs_to :author, class_name: 'User'
   belongs_to :category
 
