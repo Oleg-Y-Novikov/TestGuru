@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :tests_user, dependent: :destroy
   has_many :tests, through: :tests_user, dependent: :destroy
 
+  validates :name, presence: true
+  validates :email, presence: true
+
   # возвращает список всех Тестов, которые проходит или когда-либо проходил Пользователь фильтруя по сложности
   def list_all_tests(level)
     tests.where(level: level)

@@ -21,4 +21,10 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :tests_user, dependent: :destroy
   has_many :users, through: :tests_user, dependent: :destroy
+
+  validates :title, presence: true
+  validates_numericality_of :level, only_integer: true, greater_than_or_equal_to: 0
+  validates :title, uniqueness: { scope: :level,
+                                  case_sensitive: false,
+                                  message: 'test with this level of complexity already exists' }
 end
