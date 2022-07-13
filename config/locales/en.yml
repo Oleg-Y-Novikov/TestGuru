@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  model:
+    answer:
+      limit_answers: 'exceeded the limit of answers to the question (maximum 4)'
+    test:
+      test_exists: 'test with this level of complexity already exists'
