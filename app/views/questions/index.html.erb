@@ -5,7 +5,7 @@
 
 <% @questions.each do |question| %>
   <p><%= question.body %></p>
-  <%= link_to t('global.show'), question_path(question, test_id: @test) %>
-  <%= link_to t('global.delete'), question_path(question, test_id: @test), method: :delete,
+  <%= link_to t('global.show'), question_path(question) %>
+  <%= link_to t('global.delete'), question_path(question), method: :delete,
                                            data: { confirm: t('global.confirm') } %>
 <% end %>

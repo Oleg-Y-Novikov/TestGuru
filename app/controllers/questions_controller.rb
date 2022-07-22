@@ -1,25 +1,16 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :find_test, only: [:index, :new, :show, :create, :destroy]
+  before_action :find_test, only:     %i[index new create]
+  before_action :find_question, only: %i[show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :resque_with_question_not_found
 
   def index
     @questions = @test.questions
-    respond_to do |format|
-      format.html
-      format.json { render json: { questions: @questions } }
-    end
   end
 
-  def show
-    @question = Question.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.json { render json: { question: @question } }
-    end
-  end
+  def show; end
 
   def new
     @question = Question.new
@@ -35,8 +26,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    Question.find(params[:id]).destroy
-    redirect_to test_questions_url(@test)
+    @question.destroy
+    redirect_to test_questions_url(@question.test)
   end
 
   private
@@ -47,6 +38,10 @@ class QuestionsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:test_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
   end
 
   def resque_with_question_not_found

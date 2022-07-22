@@ -1,5 +1,5 @@
-<h1><%= @test.title %></h1>
+<h1><%= @question.test.title %></h1>
 <h3><%= t('page_questions.question') %></h3>
 
 <p><%= @question.body %></p>
-<%= link_to t('page_questions.show_all_questions'), test_questions_path(@test) %>
+<%= link_to t('page_questions.show_all_questions'), test_questions_path(@question.test) %>
