@@ -31,8 +31,23 @@
 
 en:
   hello: "Hello world"
+  global:
+    show: 'Show'
+    delete: 'Delete'
+    confirm: 'You sure?'
   model:
     answer:
       limit_answers: 'exceeded the limit of answers to the question (maximum 4)'
     test:
       test_exists: 'test with this level of complexity already exists'
+  controller:
+    questions:
+      not_found: 'The question is not found'
+  page_questions:
+    create_new_question: 'Create a new question'
+    question_text: 'question text:'
+    create_question: 'Create question'
+    question: 'Question:'
+    show_all_questions: 'show all questions'
+    all_questions: 'All questions:'
+    show_question: 'Show question'
