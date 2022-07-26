@@ -1,7 +1,22 @@
 ru:
   hello: "Привет Мир"
+  global:
+    show: 'Показать'
+    delete: 'Удалить'
+    confirm: 'Вы уверены?'
   model:
     answer:
       limit_answers: 'превышен лимит ответов на вопрос (максимум 4)'
     test:
       test_exists: 'тест с таким уровнем сложности уже существует'
+  controller:
+    questions:
+      not_found: 'Вопрос не найден'
+  page_questions:
+    create_new_question: 'Создайте новый вопрос'
+    question_text: 'Текс вопроса:'
+    create_question: 'Создать вопрос'
+    question: 'Вопрос:'
+    show_all_questions: 'показать все вопросы'
+    all_questions: 'Все вопросы:'
+
