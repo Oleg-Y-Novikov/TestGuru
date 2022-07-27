@@ -1,0 +1,15 @@
+<footer class="footer">
+  <p>
+    <a href=<%= github_url('Oleg-Y-Novikov', 'TestGuru') %> target="_blank" rel="noopener nofollow">TestGuru</a>
+    <%= t('footer.app_description') %>
+    <a href="https://vk.com/o.l.e.g.novikov/" target="_blank" rel="noopener nofollow">Oleg Novikov</a>
+  </p>
+  <nav>
+    <ul>
+      <li><%= link_to "About",   '#about_path' %></li>
+      <li><%= link_to "Contact", '#contact_path' %></li>
+      <li><a href="https://thinknetica.com/" target="_blank" rel="noopener nofollow"><%= t('footer.thinknetica_school') %></a></li>
+    </ul>
+  </nav>
+  <%= current_year %>
+</footer>
