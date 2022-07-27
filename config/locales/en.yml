@@ -30,9 +30,18 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  footer:
+    app_description: '- application is designed to create, manage and run various tests, author by'
+    thinknetica_school: 'Educational project at the online school Thinknetica'
   hello: "Hello world"
   global:
+    actions: 'Actions'
+    form_contains: 'The form contains '
+    error: 'error'
+    create: 'Create'
     show: 'Show'
+    update: 'Update'
+    edit: 'Edit'
     delete: 'Delete'
     confirm: 'You sure?'
   model:
@@ -40,14 +49,23 @@ en:
       limit_answers: 'exceeded the limit of answers to the question (maximum 4)'
     test:
       test_exists: 'test with this level of complexity already exists'
+    question:
+      cant_be_blank: "can't be blank"
   controller:
     questions:
       not_found: 'The question is not found'
   page_questions:
-    create_new_question: 'Create a new question'
+    create_new_question: "Create new |%{test_title}| question"
+    edit_question: 'Edit a question'
     question_text: 'question text:'
     create_question: 'Create question'
     question: 'Question:'
     show_all_questions: 'show all questions'
     all_questions: 'All questions:'
     show_question: 'Show question'
+  page_tests:
+    all_tests: 'All tests'
+    test: 'Test'
+    level: 'Level'
+    category: 'Category'
+    amount_questions: 'Amount questions'

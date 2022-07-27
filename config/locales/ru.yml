@@ -1,7 +1,16 @@
 ru:
+  footer:
+    app_description: '- приложение предназначено для создания, управления и запуска различных тестов, автор'
+    thinknetica_school: 'Учебный проект в онлайн-школе Thinknetica'
   hello: "Привет Мир"
   global:
+    actions: 'Действия'
+    form_contains: 'В форме содержится '
+    error: 'ошибка'
+    create: 'Создать'
     show: 'Показать'
+    update: 'Обновить'
+    edit: 'Редактировать'
     delete: 'Удалить'
     confirm: 'Вы уверены?'
   model:
@@ -9,14 +18,24 @@ ru:
       limit_answers: 'превышен лимит ответов на вопрос (максимум 4)'
     test:
       test_exists: 'тест с таким уровнем сложности уже существует'
+    question:
+      cant_be_blank: 'не может быть пустым'
   controller:
     questions:
       not_found: 'Вопрос не найден'
   page_questions:
-    create_new_question: 'Создайте новый вопрос'
+    create_question: 'Создайте вопрос'
+    create_new_question: "Создайте новый |%{test_title}| вопрос"
+    edit_question: 'Редактировать |%{test_title}| вопрос'
     question_text: 'Текс вопроса:'
     create_question: 'Создать вопрос'
-    question: 'Вопрос:'
+    question: 'Вопрос'
     show_all_questions: 'показать все вопросы'
-    all_questions: 'Все вопросы:'
+    all_questions: 'Все вопросы'
+  page_tests:
+    all_tests: 'Все тесты'
+    test: 'Тест'
+    level: 'Уровень'
+    category: 'Категория'
+    amount_questions: 'Колличество вопросов'
 
