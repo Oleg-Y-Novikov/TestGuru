@@ -1,0 +1,14 @@
+<% provide(:title, t('page_tests.all_tests')) %>
+
+<h1><%= t('page_tests.all_tests') %></h1>
+
+<table>
+  <tr>
+    <th><%= t('page_tests.test') %></th>
+    <th><%= t('page_tests.level') %></th>
+    <th><%= t('page_tests.category') %></th>
+    <th><%= t('page_tests.amount_questions') %></th>
+    <th colspan="3"><%= t('global.actions') %></th>
+  </tr>
+  <%= render @tests %>
+</table>

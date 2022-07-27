@@ -1,0 +1,11 @@
+<tr>
+  <td><%= test.title %></td>
+  <td><%= test.level %></td>
+  <td><%= test.category.title %></td>
+  <td><%= test.questions.size %></td>
+
+  <td><%= link_to t('global.show'), test_questions_path(test) %> |</td>
+  <td><%= link_to t('global.edit'), '#' %> |</td>
+  <td><%= link_to t('global.delete'), '#', method: :delete,
+                                          data: { confirm: t('global.confirm') }%></td>
+</tr>
