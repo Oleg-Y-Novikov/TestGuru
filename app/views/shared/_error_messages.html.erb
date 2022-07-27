@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+  <div>
+    <h3><%= t('global.form_contains') %><%= pluralize(object.errors.count, t('global.error')) %></h3>
+    <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

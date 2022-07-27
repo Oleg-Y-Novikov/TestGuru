@@ -1,0 +1,6 @@
+<%= form_with(url: correct_url, model: @question) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <p><%= f.label t('page_questions.question_text') %></p>
+  <p><%= f.text_field :body %></p>
+  <p><%= f.submit correct_button_title %></p>
+<% end %>

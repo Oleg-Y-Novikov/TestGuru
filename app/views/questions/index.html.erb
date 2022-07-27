@@ -1,11 +1,14 @@
+<% provide(:title, t('page_questions.all_questions')) %>
+
 <h1><%= @test.title %></h1>
-<%= button_to t('page_questions.create_new_question'), new_test_question_path(@test), method: :get %>
+<%= button_to t('page_questions.create_question'), new_test_question_path(@test), method: :get %>
 
-<h3><%=t('page_questions.all_questions')%></h3>
+<h3><%= t('page_questions.all_questions') %></h3>
 
-<% @questions.each do |question| %>
-  <p><%= question.body %></p>
-  <%= link_to t('global.show'), question_path(question) %>
-  <%= link_to t('global.delete'), question_path(question), method: :delete,
-                                           data: { confirm: t('global.confirm') } %>
-<% end %>
+<table>
+  <tr>
+    <th><%= t('page_questions.question') %></th>
+    <th colspan="3"><%= t('global.actions') %></th>
+  </tr>
+  <%= render @questions %>
+</table>

@@ -1,9 +1,6 @@
-<h1><%= @test.title %></h1>
-<h3><%= t('page_questions.create_new_question') %></h3>
+<% provide(:title, t('page_questions.create_question')) %>
 
-<%= form_with(url: test_questions_path(@test), model: @question) do |f| %>
-  <p><%= f.label t('page_questions.question_text') %></p>
-  <p><%= f.text_field :body %></p>
-  <p><%= f.submit t('page_questions.create_question') %></p>
-<% end %>
-<%= link_to t('page_questions.show_all_questions'), test_questions_path(@test) %>
+<h1><%= question_header(@test.title) %></h1>
+<%= button_to t('page_questions.show_all_questions'), test_questions_path(@test), method: :get %>
+
+<%= render 'form' %>
