@@ -1,7 +1,8 @@
 <% provide(:title, t('page_tests.all_tests')) %>
 
 <h1><%= t('page_tests.all_tests') %></h1>
-
+<%= button_to t('page_tests.create_test'), new_test_path, method: :get %>
+<br>
 <table>
   <tr>
     <th><%= t('page_tests.test') %></th>

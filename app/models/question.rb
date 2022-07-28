@@ -5,5 +5,5 @@ class Question < ApplicationRecord
 
   has_many :answers, dependent: :destroy
 
-  validates :body, presence: { message: I18n.t('model.question.cant_be_blank') }
+  validates :body, presence: { message: I18n.t('model.cant_be_blank') }
 end

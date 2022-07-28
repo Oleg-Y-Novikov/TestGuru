@@ -4,8 +4,8 @@
   <td><%= test.category.title %></td>
   <td><%= test.questions.size %></td>
 
-  <td><%= link_to t('global.show'), test_questions_path(test) %> |</td>
-  <td><%= link_to t('global.edit'), '#' %> |</td>
-  <td><%= link_to t('global.delete'), '#', method: :delete,
+  <td><%= link_to t('global.show'), test_path(test) %> |</td>
+  <td><%= link_to t('global.edit'), edit_test_path(test) %> |</td>
+  <td><%= link_to t('global.delete'), test_path(test), method: :delete,
                                           data: { confirm: t('global.confirm') }%></td>
 </tr>

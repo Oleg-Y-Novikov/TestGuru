@@ -1,14 +1,17 @@
 <footer class="footer">
   <p>
-    <a href=<%= github_url('Oleg-Y-Novikov', 'TestGuru') %> target="_blank" rel="noopener nofollow">TestGuru</a>
+    <%= github_url(author: 'Oleg-Y-Novikov', repo: 'TestGuru', title: 'TestGuru') %>
     <%= t('footer.app_description') %>
-    <a href="https://vk.com/o.l.e.g.novikov/" target="_blank" rel="noopener nofollow">Oleg Novikov</a>
+    <%= author_url(author: 'o.l.e.g.novikov', title: 'Oleg Novikov') %>
+
   </p>
   <nav>
     <ul>
       <li><%= link_to "About",   '#about_path' %></li>
       <li><%= link_to "Contact", '#contact_path' %></li>
-      <li><a href="https://thinknetica.com/" target="_blank" rel="noopener nofollow"><%= t('footer.thinknetica_school') %></a></li>
+      <li>
+        <%= link_to t('footer.thinknetica_school'), "https://thinknetica.com/", target: '_blank', rel: 'nofollow' %>
+      </li>
     </ul>
   </nav>
   <%= current_year %>

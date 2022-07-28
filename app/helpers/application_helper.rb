@@ -1,4 +1,6 @@
 module ApplicationHelper
+  ACTION = %w[new create].freeze
+
   # Возвращает полный заголовок на основе заголовка страницы.
   def full_title(page_title = '')
     base_title = 'TestGuru'
@@ -7,11 +9,21 @@ module ApplicationHelper
 
   # Возвращает текущий год.
   def current_year
-    Date.today.year
+    Date.current.year
   end
 
   # Возвращает url на GitHub репозиторий
-  def github_url(author, repo)
-    %(https://github.com/#{author}/#{repo}/)
+  def github_url(author:, repo:, title:)
+    link_to title, %(https://github.com/#{author}/#{repo}/), target: '_blank', rel: 'nofollow'
+  end
+
+  # Возвращает url на страницу VK
+  def author_url(author:, title:)
+    link_to title, %(https://vk.com/#{author}/), target: '_blank', rel: 'nofollow'
+  end
+
+  # Возвращает корректоное название кнопки в зависимости от экшена
+  def correct_button_title
+    ACTION.include?(action_name) ? t('global.create') : t('global.edit')
   end
 end
