@@ -37,6 +37,10 @@ en:
           attributes:
             category:
               required: "Category must exist"
+  validate_errors:
+    error:
+      one: "The form contains %{count} error"
+      other: "The form contains %{count} errors"
   footer:
     app_description: '- application is designed to create, manage and run various tests, author by'
     thinknetica_school: 'Educational project at the online school Thinknetica'

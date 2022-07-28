@@ -6,6 +6,12 @@ ru:
           attributes:
             category:
               required: "должна существовать"
+  validate_errors:
+    error:
+      one: "Форма содержит %{count} ошибку"
+      few: "Форма содержит %{count} ошибки"
+      many: "Форма содержит %{count} ошибок"
+      other: "Форма содержит %{count} ошибок"
   footer:
     app_description: '- приложение предназначено для создания, управления и запуска различных тестов, автор'
     thinknetica_school: 'Учебный проект в онлайн-школе Thinknetica'
