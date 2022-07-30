@@ -1,6 +1,4 @@
 module ApplicationHelper
-  ACTION = %w[new create].freeze
-
   # Возвращает полный заголовок на основе заголовка страницы.
   def full_title(page_title = '')
     base_title = 'TestGuru'
@@ -22,8 +20,8 @@ module ApplicationHelper
     link_to title, %(https://vk.com/#{author}/), target: '_blank', rel: 'nofollow'
   end
 
-  # Возвращает корректоное название кнопки в зависимости от экшена
-  def correct_button_title
-    ACTION.include?(action_name) ? t('global.create') : t('global.edit')
+  # Возвращает корректоное название кнопки в зависимости от состояния объекта
+  def correct_button_title(object:)
+    object.new_record? ? t('global.create') : t('global.edit')
   end
 end

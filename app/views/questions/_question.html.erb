@@ -1,13 +1,7 @@
 <tr>
   <td><%= question.body %></td>
-  <% if action_name == 'show' &&  controller_name == 'questions' %>
-    <td><%= link_to t('global.edit'), edit_question_path(question) %> |</td>
-    <td><%= link_to t('global.delete'), question_path(question), method: :delete,
-                                            data: { confirm: t('global.confirm') }%></td>
-  <% else %>
-    <td><%= link_to t('global.show'), question_path(question) %> |</td>
-    <td><%= link_to t('global.edit'), edit_question_path(question) %> |</td>
-    <td><%= link_to t('global.delete'), question_path(question), method: :delete,
-                                            data: { confirm: t('global.confirm') }%></td>
-  <% end %>
+  <td><%= link_to t('global.show'), question_path(question) %> |</td>
+  <td><%= link_to t('global.edit'), edit_question_path(question) %> |</td>
+  <td><%= link_to t('global.delete'), question_path(question), method: :delete,
+                                                               data: { confirm: t('global.confirm') }%></td>
 </tr>

@@ -2,4 +2,9 @@
 <%= button_to t('page_questions.show_all_questions'), test_path(@question.test), method: :get %>
 <br>
 
-<%= render @question %>
+<tr>
+  <td><%= @question.body %></td>
+  <td><%= link_to t('global.edit'), edit_question_path(@question) %> |</td>
+  <td><%= link_to t('global.delete'), question_path(@question), method: :delete,
+                                                               data: { confirm: t('global.confirm') }%></td>
+</tr>

@@ -2,7 +2,6 @@
 
 class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy]
-  before_action :find_user, only: %i[create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :resque_with_test_not_found
 
@@ -17,7 +16,8 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = @user.tests_author.build(test_params)
+    user = User.find(params[:test][:author_id])
+    @test = user.tests_author.build(test_params)
     if @test.save
       redirect_to @test
     else
@@ -48,10 +48,6 @@ class TestsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:id])
-  end
-
-  def find_user
-    @user = User.find(params[:test][:author_id])
   end
 
   def resque_with_test_not_found
