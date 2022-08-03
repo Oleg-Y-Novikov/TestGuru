@@ -1,22 +1,64 @@
 ru:
+  activerecord:
+    errors:
+      models:
+        test:
+          attributes:
+            category:
+              required: "должна существовать"
+  validate_errors:
+    error:
+      one: "Форма содержит %{count} ошибку"
+      few: "Форма содержит %{count} ошибки"
+      many: "Форма содержит %{count} ошибок"
+      other: "Форма содержит %{count} ошибок"
+  footer:
+    app_description: '- приложение предназначено для создания, управления и запуска различных тестов, автор'
+    thinknetica_school: 'Учебный проект в онлайн-школе Thinknetica'
   hello: "Привет Мир"
   global:
+    actions: 'Действия'
+    form_contains: 'В форме содержится '
+    error: 'ошибка'
+    create: 'Создать'
     show: 'Показать'
+    update: 'Обновить'
+    edit: 'Редактировать'
     delete: 'Удалить'
     confirm: 'Вы уверены?'
   model:
+    must_exist: 'должна существовать'
+    cant_be_blank: 'не может быть пустым'
+    only_integer: 'только целое число, больше либо равное 0'
     answer:
       limit_answers: 'превышен лимит ответов на вопрос (максимум 4)'
     test:
-      test_exists: 'тест с таким уровнем сложности уже существует'
+      test_exists: 'тест с таким уровнем сложности уже существует' 
   controller:
     questions:
       not_found: 'Вопрос не найден'
+    tests:
+      not_found: 'Тест не найден'
   page_questions:
-    create_new_question: 'Создайте новый вопрос'
+    create_question: 'Создайте вопрос'
+    create_new_question: "Создайте новый |%{test_title}| вопрос"
+    edit_question: 'Редактировать |%{test_title}| вопрос'
     question_text: 'Текс вопроса:'
     create_question: 'Создать вопрос'
-    question: 'Вопрос:'
+    question: 'Вопрос'
     show_all_questions: 'показать все вопросы'
-    all_questions: 'Все вопросы:'
+    all_questions: 'Все вопросы'
+  page_tests:
+    no_questions: 'Пока нет ни одного вопроса.'
+    all_tests: 'Все тесты'
+    test: 'Тест'
+    title: 'Название теста'
+    level: 'Уровень'
+    category: 'Категория'
+    author: 'Автор'
+    amount_questions: 'Колличество вопросов'
+    show_all_tests: 'Показать все тесты'
+    create_test: 'Создать тест'
+    create_new_test: 'Создайте новый тест'
+    edit_test: 'Отредактируйте тест'
 

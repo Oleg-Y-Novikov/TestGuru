@@ -30,12 +30,35 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    errors:
+      models:
+        test:
+          attributes:
+            category:
+              required: "Category must exist"
+  validate_errors:
+    error:
+      one: "The form contains %{count} error"
+      other: "The form contains %{count} errors"
+  footer:
+    app_description: '- application is designed to create, manage and run various tests, author by'
+    thinknetica_school: 'Educational project at the online school Thinknetica'
   hello: "Hello world"
   global:
+    actions: 'Actions'
+    form_contains: 'The form contains '
+    error: 'error'
+    create: 'Create'
     show: 'Show'
+    update: 'Update'
+    edit: 'Edit'
     delete: 'Delete'
     confirm: 'You sure?'
   model:
+    must_exist: 'must exist'
+    cant_be_blank: "can't be blank"
+    only_integer: 'only an integer greater than or equal to 0'
     answer:
       limit_answers: 'exceeded the limit of answers to the question (maximum 4)'
     test:
@@ -43,11 +66,27 @@ en:
   controller:
     questions:
       not_found: 'The question is not found'
+    tests:
+      not_found: 'The test is not found'
   page_questions:
-    create_new_question: 'Create a new question'
+    create_new_question: "Create new |%{test_title}| question"
+    edit_question: 'Edit a question'
     question_text: 'question text:'
     create_question: 'Create question'
     question: 'Question:'
     show_all_questions: 'show all questions'
     all_questions: 'All questions:'
     show_question: 'Show question'
+  page_tests:
+    no_questions: 'There are no questions yet.'
+    all_tests: 'All tests'
+    test: 'Test'
+    title: 'Test title'
+    level: 'Level'
+    category: 'Category'
+    author: 'Author'
+    amount_questions: 'Amount questions'
+    show_all_tests: 'Show all tests'
+    create_test: 'Create test'
+    create_new_test: 'Create new test'
+    edit_test: 'Edit test'

@@ -1,0 +1,26 @@
+<%= form_with(model: @test, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <p>
+    <%= f.label t('page_tests.title') %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label t('page_tests.level') %><br>
+    <%= f.number_field :level %>
+  </p>
+
+  <p>
+    <%= f.label t('page_tests.category') %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+  </p>
+
+  <% if action_name == 'new' || action_name == 'create' %>
+    <p>
+      <%= f.label t('page_tests.author') %><br>
+      <%= f.collection_select :author_id, User.all, :id, :name, prompt: true %>
+    </p>
+  <% end %>
+
+  <p><%= f.submit correct_button_title(object: @test) %></p>
+<% end %>

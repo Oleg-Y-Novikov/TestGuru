@@ -1,0 +1,11 @@
+<% if object.errors.any? %>
+  <div>
+    <h3><%= t('validate_errors.error', count: object.errors.count) %></h3>
+    <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
