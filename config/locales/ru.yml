@@ -26,6 +26,7 @@ ru:
     edit: 'Редактировать'
     delete: 'Удалить'
     confirm: 'Вы уверены?'
+    start_test: 'Пройти тест'
   model:
     must_exist: 'должна существовать'
     cant_be_blank: 'не может быть пустым'
@@ -39,6 +40,9 @@ ru:
       not_found: 'Вопрос не найден'
     tests:
       not_found: 'Тест не найден'
+      no_questions_for_test: 'Нет вопросов у теста! Сначала создайте вопрос!'
+    answers:
+      not_found: 'Ответ не найден'
   page_questions:
     create_question: 'Создайте вопрос'
     create_new_question: "Создайте новый |%{test_title}| вопрос"
@@ -61,4 +65,20 @@ ru:
     create_test: 'Создать тест'
     create_new_test: 'Создайте новый тест'
     edit_test: 'Отредактируйте тест'
-
+    show_result: 'Показать результат'
+  page_answers:
+    create_answer: 'Создать ответ'
+    answers: 'Ответы'
+    create_new_answer: 'Создайте новый ответ'
+    edit_answer: 'Отредактируйте ответ'
+    show_all_answers: 'Показать все ответы'
+    answer_body: 'Текст ответа'
+  page_passing_test:
+    passing_test: 'Прохождение теста'
+    reply: 'Ответить'
+    passed: 'Завершен'
+    success: 'Поздравляем! Вы успешно прошли тест!'
+    result: "Ваш результат = "
+    correct_answers: 'верных ответов'
+    failure: 'Тест не пройден'
+    pass_again: 'Пройти снова'
