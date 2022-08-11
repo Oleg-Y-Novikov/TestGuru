@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show edit update destroy]
+  before_action :find_test, only: %i[show edit update destroy start]
+  before_action :find_current_user, only: %i[index start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :resque_with_test_not_found
 
@@ -40,6 +41,16 @@ class TestsController < ApplicationController
     redirect_to(tests_url)
   end
 
+  def start
+    if @test.questions.blank?
+      flash[:danger] = I18n.t('controller.tests.no_questions_for_test')
+      redirect_to root_url
+    else
+      @current_user.start_test(@test)
+      redirect_to @current_user.find_test_user(@test)
+    end
+  end
+
   private
 
   def test_params
@@ -48,6 +59,10 @@ class TestsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def find_current_user
+    @current_user = User.first
   end
 
   def resque_with_test_not_found
