@@ -114,7 +114,7 @@ answers = Answer.create!(
     # 1 question
     { body: 'Гвидо ван Россум', correct: false, question: questions[5] },
     { body: 'Юкихиро Мацумото', correct: true,  question: questions[5] },
-    { body: 'Расмус Лердорф',   correct: true,  question: questions[5] },
+    { body: 'Расмус Лердорф',   correct: false, question: questions[5] },
 
     # 2 question
     { body: 'компилируемый язык',    correct: false, question: questions[6] },
@@ -136,8 +136,8 @@ answers = Answer.create!(
     { body: 'способ группировки методов, констант, классов, других модулей', correct: true, question: questions[9] },
 
     # 6 question
-    { body: 'у Модуля нельзя создать экземпляр', correct: false, question: questions[10] },
-    { body: 'отличий нет', correct: true, question: questions[10] },
+    { body: 'у Модуля нельзя создать экземпляр', correct: true, question: questions[10] },
+    { body: 'отличий нет', correct: false, question: questions[10] },
     { body: 'Модуль не может иметь подклассы, нет иерархии наследования', correct: true, question: questions[10] },
 
     # answers Rails test
