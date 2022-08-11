@@ -1,0 +1,18 @@
+<% provide(:title, t('page_passing_test.passing_test')) %>
+
+<div class="center">
+  <h1><%= @test_user.test.title %></h1>
+  <p><%= @test_user.current_question_number %>/<%= @test_user.total_amount_questions %></p>
+</div>
+<br>
+<h3><%= @test_user.current_question.body %></h3>
+<br>
+<%= form_with url: tests_user_path(@test_user), local: true, method: :put do |f| %>
+  <%= f.collection_check_boxes :answer_ids, @test_user.current_question.answers, :id, :body, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box %>
+      <%= b.label %>
+    </p>
+  <% end %>
+  <p><%= f.submit t('page_passing_test.reply'), class: "btn btn-primary" %></p>
+<% end %>
