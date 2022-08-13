@@ -6,8 +6,14 @@ class TestsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :resque_with_test_not_found
 
+  # возвращает коллекцию всех Тестов с дополнительным атрибутом completed(true либо false) модели TestsUser
+  # атрибут говорит о полном прохождении Теста текущим пользователем
   def index
-    @tests = Test.includes(:category, :questions).all
+    @tests = Test.includes(:category, :questions).select(
+      'tests.*, tests_users.completed'
+    ).joins(
+      "LEFT JOIN tests_users ON tests.id = tests_users.test_id AND tests_users.user_id = #{@current_user.id}"
+    )
   end
 
   def show; end

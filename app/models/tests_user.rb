@@ -26,18 +26,23 @@ class TestsUser < ApplicationRecord
     update_columns(completed: false, correct_questions: 0)
   end
 
+  # возвращает true если тест пройден успешно
+  # количество верно данных ответов >= 85%
   def test_passage_success?
     result >= 85
   end
 
+  # возвращает результат прохождения Теста в процентном выражении
   def result
     (correct_questions * 100.0 / test.questions.count).to_i
   end
 
+  # возвращает порядковый номер вопроса
   def current_question_number
     test.questions.order(:id).where('id < ?', current_question.id).size + 1
   end
 
+  # возвращает общее колличество вопросов текущего теста
   def total_amount_questions
     test.questions.count
   end
@@ -57,6 +62,9 @@ class TestsUser < ApplicationRecord
     current_question.answers.correct
   end
 
+  # устанавливает следующий вопрос в поле current_question
+  # если current_question == nil значит вопросы к тесту закончились
+  # помечаем тест как пройденый и устанавливает current_question на первый вопрос теста
   def before_update_set_next_question
     self.current_question = test.questions.where('id > ?', current_question).order(:id).first
     return if current_question.present?
@@ -65,6 +73,7 @@ class TestsUser < ApplicationRecord
     self.current_question = test.questions.first
   end
 
+  # устанавливает первый вопрос к тесту в поле current_question при первом прохождении теста текущим пользователем
   def before_validation_set_first_question
     self.current_question = test.questions.first
   end

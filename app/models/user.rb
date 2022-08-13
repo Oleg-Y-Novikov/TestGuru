@@ -15,20 +15,14 @@ class User < ApplicationRecord
 
   # метод реализут логику начала прохождения конкретного теста
   def start_test(test)
-    test_passege = tests_user.find_by(test_id: test.id)
-    return if test_passege.present?
+    test_user = find_test_user(test)
+    return if test_user.present?
 
     tests.push(test)
   end
 
-  def test_completed?(test)
-    return unless find_test_user(test)
-
-    find_test_user(test).completed?
-  end
-
   # возвращает объект TestsUser который связан с текущим User-ом и с переданным Test-ом
   def find_test_user(test)
-    tests_user.find { |obj| obj.test_id == test.id }
+    tests_user.find_by(test_id: test.id)
   end
 end

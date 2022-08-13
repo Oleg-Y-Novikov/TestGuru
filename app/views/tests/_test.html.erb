@@ -11,7 +11,7 @@
       <%= link_to t('global.delete'), test_path(test), method: :delete,
                                             data: { confirm: t('global.confirm') }, class: 'red' %> |
 
-      <% if @current_user.test_completed?(test) %>
+      <% if current_user_test_completed?(test) %>
         <div class="button_inline">
           <%= button_to t('page_tests.show_result'), result_tests_user_path(@current_user.find_test_user(test)), method: :get, class: 'btn btn-success' %>
         </div>
