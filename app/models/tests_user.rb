@@ -5,8 +5,7 @@ class TestsUser < ApplicationRecord
   belongs_to :user
   belongs_to :current_question, class_name: 'Question'
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_update :before_update_set_next_question
+  before_validation :before_validation_set_question, on: %i[create update]
 
   # увеличивает счетчик верных ответов и обновляет объект TestsUser
   def accept!(answer_ids)
@@ -34,7 +33,7 @@ class TestsUser < ApplicationRecord
 
   # возвращает результат прохождения Теста в процентном выражении
   def result
-    (correct_questions * 100.0 / test.questions.count).to_i
+    (correct_questions * 100.0 / test.questions.count).floor(1)
   end
 
   # возвращает порядковый номер вопроса
@@ -62,19 +61,20 @@ class TestsUser < ApplicationRecord
     current_question.answers.correct
   end
 
-  # устанавливает следующий вопрос в поле current_question
-  # если current_question == nil значит вопросы к тесту закончились
-  # помечаем тест как пройденый и устанавливает current_question на первый вопрос теста
-  def before_update_set_next_question
-    self.current_question = test.questions.where('id > ?', current_question).order(:id).first
-    return if current_question.present?
+  # устанавливает первый вопрос к тесту в поле current_question при первом прохождении теста текущим пользователем
+  def before_validation_set_question
+    if new_record?
+      self.current_question = test.questions.order(:id).first
+    else
+      self.current_question = test.questions.where('id > ?', current_question).order(:id).first
+      return if current_question.present?
 
-    self.completed = true
-    self.current_question = test.questions.first
+      test_completed
+    end
   end
 
-  # устанавливает первый вопрос к тесту в поле current_question при первом прохождении теста текущим пользователем
-  def before_validation_set_first_question
-    self.current_question = test.questions.first
+  def test_completed
+    self.completed = true
+    self.current_question = test.questions.order(:id).first
   end
 end

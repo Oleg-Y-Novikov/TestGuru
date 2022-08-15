@@ -3,9 +3,6 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  get '/about',  to: 'static_pages#about'
-  get '/author', to: 'static_pages#author'
-
   resources :tests do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index

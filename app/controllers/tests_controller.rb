@@ -9,11 +9,11 @@ class TestsController < ApplicationController
   # возвращает коллекцию всех Тестов с дополнительным атрибутом completed(true либо false) модели TestsUser
   # атрибут говорит о полном прохождении Теста текущим пользователем
   def index
-    @tests = Test.includes(:category, :questions).select(
-      'tests.*, tests_users.completed'
-    ).joins(
+    @tests = Test.includes(:category).select(
+      'tests.*, tests_users.completed, COUNT(questions.id) AS count_questions'
+    ).joins(:questions).joins(
       "LEFT JOIN tests_users ON tests.id = tests_users.test_id AND tests_users.user_id = #{@current_user.id}"
-    )
+    ).group('tests.id')
   end
 
   def show; end
@@ -48,13 +48,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    if @test.questions.blank?
-      flash[:danger] = I18n.t('controller.tests.no_questions_for_test')
-      redirect_to root_url
-    else
-      @current_user.start_test(@test)
-      redirect_to @current_user.find_test_user(@test)
-    end
+    @current_user.start_test(@test)
+    redirect_to @current_user.find_test_user(@test)
   end
 
   private
