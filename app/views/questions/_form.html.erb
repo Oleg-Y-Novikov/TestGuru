@@ -1,8 +1,12 @@
-<%= form_with(model: [@test, @question], local: true) do |f| %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: [@test, @question], local: true) do |f| %>
 
-  <%= render 'shared/error_messages', object: f.object %>
+      <%= render 'shared/error_messages', object: f.object %>
 
-  <p><%= f.label t('page_questions.question_text') %></p>
-  <p><%= f.text_field :body %></p>
-  <p><%= f.submit correct_button_title(object: @question) %></p>
-<% end %>
+      <p><%= f.label t('page_questions.question_text') %></p>
+      <p><%= f.text_area :body, class: 'form-control' %></p>
+      <p><%= f.submit correct_button_title(object: @question), class: "btn btn-primary" %></p>
+    <% end %>
+  </div>
+</div>

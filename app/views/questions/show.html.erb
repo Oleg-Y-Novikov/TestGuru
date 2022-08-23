@@ -1,10 +1,20 @@
 <h1><%= @question.test.title %></h1>
-<%= button_to t('page_questions.show_all_questions'), test_path(@question.test), method: :get %>
+<%= button_to t('page_questions.show_all_questions'), test_path(@question.test), method: :get, class: 'btn btn-primary' %>
 <br>
+<table class="table">
+  <tr>
+    <td style='font-size: 18px'><%= @question.body %></td>
+    <td>
+      <%= link_to t('global.edit'), edit_question_path(@question) %> |
+      <%= link_to t('global.delete'), question_path(@question), method: :delete,
+                                                                data: { confirm: t('global.confirm') }, class: 'red' %>
+    </td>
+  </tr>
+</table>
 
-<tr>
-  <td><%= @question.body %></td>
-  <td><%= link_to t('global.edit'), edit_question_path(@question) %> |</td>
-  <td><%= link_to t('global.delete'), question_path(@question), method: :delete,
-                                                               data: { confirm: t('global.confirm') }%></td>
-</tr>
+<h2><%= t('page_answers.answers') %> </h2>
+<%= button_to t('page_answers.create_answer'), new_question_answer_path(@question), method: :get, class: 'btn btn-primary' %>
+<br>
+<table class="table">
+  <%= render @question.answers %>
+</table>

@@ -1,0 +1,9 @@
+<tr>
+  <td><%= answer.body %></td>
+  <td>
+    <%= link_to t('global.show'), answer_path(answer) %> |
+    <%= link_to t('global.edit'), edit_answer_path(answer) %> |
+    <%= link_to t('global.delete'), answer_path(answer), method: :delete,
+                                                                data: { confirm: t('global.confirm') }, class: 'red' %>
+  </td>
+</tr>

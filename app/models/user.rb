@@ -12,4 +12,17 @@ class User < ApplicationRecord
   def list_all_tests(level)
     tests.where(level: level)
   end
+
+  # метод реализут логику начала прохождения конкретного теста
+  def start_test(test)
+    test_user = find_test_user(test)
+    return if test_user.present?
+
+    tests.push(test)
+  end
+
+  # возвращает объект TestsUser который связан с текущим User-ом и с переданным Test-ом
+  def find_test_user(test)
+    tests_user.find_by(test_id: test.id)
+  end
 end

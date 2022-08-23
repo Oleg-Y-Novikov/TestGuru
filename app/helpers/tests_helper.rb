@@ -7,4 +7,8 @@ module TestsHelper
       t('page_tests.edit_test')
     end
   end
+
+  def current_user_test_completed?(test)
+    test.completed.to_i == 1
+  end
 end

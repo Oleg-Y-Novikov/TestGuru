@@ -55,6 +55,7 @@ en:
     edit: 'Edit'
     delete: 'Delete'
     confirm: 'You sure?'
+    start_test: 'Start Test'
   model:
     must_exist: 'must exist'
     cant_be_blank: "can't be blank"
@@ -68,6 +69,9 @@ en:
       not_found: 'The question is not found'
     tests:
       not_found: 'The test is not found'
+      no_questions_for_test: 'There are no questions for the test! Create a question first!'
+    answers:
+      not_found: 'The answer is not found'
   page_questions:
     create_new_question: "Create new |%{test_title}| question"
     edit_question: 'Edit a question'
@@ -90,3 +94,20 @@ en:
     create_test: 'Create test'
     create_new_test: 'Create new test'
     edit_test: 'Edit test'
+    show_result: 'Show result'
+  page_answers:
+    create_answer: 'Create answer'
+    answers: 'Answers'
+    create_new_answer: 'Create new answer'
+    edit_answer: 'Edit answer'
+    show_all_answers: 'Show all answers'
+    answer_body: 'Body'
+  page_passing_test:
+    passing_test: 'Passing test'
+    reply: 'Reply'
+    passed: 'Passed'
+    success: 'Congratulations! You have successfully passed the test!'
+    result: "Your result = "
+    correct_answers: 'correct answers'
+    failure: 'Test failed'
+    pass_again: 'Pass again'

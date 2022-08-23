@@ -3,7 +3,7 @@
 class Answer < ApplicationRecord
   belongs_to :question
 
-  validates :body, presence: true
+  validates :body, presence: { message: I18n.t('model.cant_be_blank') }
   validate :validate_quantity_answers, on: :create
 
   scope :correct, -> { where(correct: true) }
