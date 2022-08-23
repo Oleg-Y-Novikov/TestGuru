@@ -51,9 +51,7 @@ class TestsUser < ApplicationRecord
   # проверяет корректность данных пользователем ответов
   # возвращает true если все ответы верные, в противном случае false
   def correct_answer?(answer_ids)
-    return false if answer_ids.blank?
-
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
   end
 
   # возвращает объект ActiveRecord корректных ответов на текущий вопрос
