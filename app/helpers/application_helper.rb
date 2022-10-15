@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   # Возвращает полный заголовок на основе заголовка страницы.
   def full_title(page_title = '')
@@ -23,5 +25,11 @@ module ApplicationHelper
   # Возвращает корректоное название кнопки в зависимости от состояния объекта
   def correct_button_title(object:)
     object.new_record? ? t('global.create') : t('global.edit')
+  end
+
+  def flash_message
+    flash.map do |message_type, message|
+      content_tag(:div, message, class: "alert alert-#{message_type}")
+    end.join.html_safe
   end
 end
