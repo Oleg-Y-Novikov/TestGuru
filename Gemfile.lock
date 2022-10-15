@@ -64,6 +64,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.9.3)
       msgpack (~> 1.0)
@@ -211,8 +212,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
-  bootstrap-sass
+  bootstrap-sass (= 3.4.1)
   byebug
   capybara (>= 3.26)
   jbuilder (~> 2.7)
