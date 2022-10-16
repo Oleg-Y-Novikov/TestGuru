@@ -6,6 +6,20 @@ ru:
           attributes:
             category:
               required: "должна существовать"
+        user:
+          attributes:
+            name:
+              blank: 'не может быть пустым'
+            email:
+              blank: 'не может быть пустым'
+              invalid: 'электронная почта не действительна'
+              taken: 'электронная почта уже занята'
+            password:
+              blank: 'не может быть пустым'
+              too_short: 'слишком кароткий (минимум 6 символов)'
+            password_confirmation:
+              confirmation: 'подтверждение пароля не совпадает с паролем'
+
   validate_errors:
     error:
       one: "Форма содержит %{count} ошибку"
@@ -43,6 +57,21 @@ ru:
       no_questions_for_test: 'Нет вопросов у теста! Сначала создайте вопрос!'
     answers:
       not_found: 'Ответ не найден'
+    sessions:
+      welcome: 'Добро пожаловать, %{user_name} Guru'
+      log_in_fail: 'Неверная комбинация электронной почты и пароля'
+      log_out: 'Вы вышли из TestGuru!'
+      access_denied: 'Вы должны войти в систему, чтобы получить доступ к этой странице'
+    users:
+      changes_saved: 'Изменения успешно сохранены!'
+      profile_deleted: 'Профиль удален'
+      
+  page_users:
+    delete_profile: 'Удалить профиль'
+    edit_profile: 'Изменить профиль'
+    sign_up: 'Зарегистрироваться'
+    profile: 'Ваш профиль'
+    count_tests_passed: 'Колличество пройденых тестов'
   page_questions:
     create_question: 'Создайте вопрос'
     create_new_question: "Создайте новый |%{test_title}| вопрос"
@@ -82,3 +111,7 @@ ru:
     correct_answers: 'верных ответов'
     failure: 'Тест не пройден'
     pass_again: 'Пройти снова'
+  page_sessions:
+    log_in: 'Войти'
+    new_user: 'Новый пользователь?'
+    sign_up: 'Зарегистрируйтесь сейчас!'
