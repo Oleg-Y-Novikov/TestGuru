@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: user, local: true) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.label :email %><br>
+        <%= f.email_field :email, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.label :password %><br>
+        <%= f.password_field :password, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.label :password_confirmation, 'Confirmation' %><br>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </p>
+
+      <p><%= f.submit correct_button_title(object: f.object), class: 'btn btn-primary btn-block' %></p>
+    <% end %>
+    <% if user.persisted? %>
+      <%= button_to t('page_users.delete_profile'), user_path(@current_user), 
+                      method: :delete, data: { confirm: t('global.confirm') }, 
+                      class: 'btn btn-danger btn-block' %>
+      <% end %>
+  </div>
+</div>
