@@ -27,9 +27,9 @@ module ApplicationHelper
     object.new_record? ? t('global.create') : t('global.edit')
   end
 
-  def flash_message
-    flash.map do |message_type, message|
-      content_tag(:div, message, class: "alert alert-#{message_type}")
-    end.join.html_safe
+  def flash_message(message_type:)
+    return if flash[message_type].blank?
+
+    content_tag(:div, flash[message_type], class: "alert alert-#{message_type}")
   end
 end

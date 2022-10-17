@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module SessionsHelper
+module Authentication
   private
 
   def current_user
@@ -8,11 +8,11 @@ module SessionsHelper
   end
 
   def authenticate_user
-    if current_user.nil?
-      store_location
-      flash[:danger] = t('controller.sessions.access_denied')
-      redirect_to login_path
-    end
+    return if current_user.present?
+
+    store_location
+    flash[:danger] = t('controller.sessions.access_denied')
+    redirect_to login_path
   end
 
   # Сохраняет запрошенный URL.
@@ -27,7 +27,7 @@ module SessionsHelper
   end
 
   def user_logged_in?
-    !!current_user
+    current_user.present?
   end
 
   def log_in(user)

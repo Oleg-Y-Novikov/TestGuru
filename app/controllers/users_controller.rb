@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in(@user)
+      flash[:success] = I18n.t('controller.sessions.welcome', user_name: @user.name)
       redirect_back_or
     else
       render :new
