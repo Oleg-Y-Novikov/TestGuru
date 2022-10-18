@@ -72,6 +72,20 @@ en:
       no_questions_for_test: 'There are no questions for the test! Create a question first!'
     answers:
       not_found: 'The answer is not found'
+    sessions:
+      welcome: 'Welcome, %{user_name} Guru'
+      log_in_fail: 'Invalid email/password combination'
+      log_out: 'Logged out!'
+      access_denied: 'You must be logged in to access this page'
+    users:
+      changes_saved: 'Changes saved!'
+      profile_deleted: 'Profile deleted!'
+  page_users:
+    delete_profile: 'Delete profile'
+    edit_profile: 'Edit profile'
+    sign_up: 'Sign up'
+    profile: 'You profile'
+    count_tests_passed: 'Count tests passed'
   page_questions:
     create_new_question: "Create new |%{test_title}| question"
     edit_question: 'Edit a question'
@@ -111,3 +125,7 @@ en:
     correct_answers: 'correct answers'
     failure: 'Test failed'
     pass_again: 'Pass again'
+  page_sessions:
+    log_in: 'Log in'
+    new_user: 'New user?'
+    sign_up: 'Sign up now!'

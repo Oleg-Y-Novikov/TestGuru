@@ -17,14 +17,7 @@
         <%= f.collection_select :category_id, Category.all, :id, :title, { prompt: true }, { class: 'form-control' } %>
       </p>
 
-      <% if action_name == 'new' || action_name == 'create' %>
-        <p>
-          <%= f.label t('page_tests.author') %><br>
-          <%= f.collection_select :author_id, User.all, :id, :name, { prompt: true }, { class: 'form-control' } %>
-        </p>
-      <% end %>
-
-      <p><%= f.submit correct_button_title(object: @test), class: "btn btn-primary" %></p>
+      <p><%= f.submit correct_button_title(object: @test), class: 'btn btn-primary btn-block' %></p>
     <% end %>
   </div>
 </div>

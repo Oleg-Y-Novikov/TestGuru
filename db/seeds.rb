@@ -3,16 +3,16 @@
 # Generate sample users.
 users = User.create!(
   [
-    { name: 'Admin User',            email: 'example@admin.ru',    admin: true },
-    { name: 'Ivan Ivanov',           email: 'ivanov@gmail.com',    admin: false },
-    { name: 'Sergey Petrov',         email: 'sergey@gmail.com',    admin: false },
-    { name: 'Nikolay Zaharov',       email: 'nikolay@gmail.com',   admin: false },
-    { name: 'Ekaterina Naumova',     email: 'ekaterina@gmail.com', admin: false },
-    { name: 'Johnny Depp',           email: 'johnny@gmail.com',    admin: false },
-    { name: 'Arnold Schwarzenegger', email: 'arnold@gmail.com',    admin: false },
-    { name: 'Sylvester Stallone',    email: 'stalone@gmail.com',   admin: false },
-    { name: 'Brad Pitt',             email: 'brad@gmail.com',      admin: false },
-    { name: 'Angelina Jolie',        email: 'angelina@gmail.com',  admin: false }
+    { name: 'Admin User',            email: 'example@admin.ru',    admin: true,  password: 'password' },
+    { name: 'Ivan Ivanov',           email: 'ivanov@gmail.com',    admin: false, password: 'password' },
+    { name: 'Sergey Petrov',         email: 'sergey@gmail.com',    admin: false, password: 'password' },
+    { name: 'Nikolay Zaharov',       email: 'nikolay@gmail.com',   admin: false, password: 'password' },
+    { name: 'Ekaterina Naumova',     email: 'ekaterina@gmail.com', admin: false, password: 'password' },
+    { name: 'Johnny Depp',           email: 'johnny@gmail.com',    admin: false, password: 'password' },
+    { name: 'Arnold Schwarzenegger', email: 'arnold@gmail.com',    admin: false, password: 'password' },
+    { name: 'Sylvester Stallone',    email: 'stalone@gmail.com',   admin: false, password: 'password' },
+    { name: 'Brad Pitt',             email: 'brad@gmail.com',      admin: false, password: 'password' },
+    { name: 'Angelina Jolie',        email: 'angelina@gmail.com',  admin: false, password: 'password' }
   ]
 )
 
@@ -37,16 +37,16 @@ tests = Test.create!(
 )
 
 # Creating a User relationship with Tests
-TestsUser.create!(
-  [
-    { test: tests[0], user: users[0] },
-    { test: tests[1], user: users[0] },
-    { test: tests[2], user: users[0] },
-    { test: tests[3], user: users[0] },
-    { test: tests[1], user: users[1] },
-    { test: tests[2], user: users[2] }
-  ]
-)
+# TestsUser.create!(
+#  [
+#    { test: tests[0], user: users[0] },
+#    { test: tests[1], user: users[0] },
+#    { test: tests[2], user: users[0] },
+#    { test: tests[3], user: users[0] },
+#    { test: tests[1], user: users[1] },
+#    { test: tests[2], user: users[2] }
+#  ]
+# )
 
 # Create questions.
 questions = Question.create!(

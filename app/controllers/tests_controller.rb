@@ -2,18 +2,22 @@
 
 class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy start]
-  before_action :find_current_user, only: %i[index start]
+  skip_before_action :authenticate_user, only: :index
 
-  rescue_from ActiveRecord::RecordNotFound, with: :resque_with_test_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   # возвращает коллекцию всех Тестов с дополнительным атрибутом completed(true либо false) модели TestsUser
   # атрибут говорит о полном прохождении Теста текущим пользователем
   def index
-    @tests = Test.includes(:category).select(
-      'tests.*, tests_users.completed, COUNT(questions.id) AS count_questions'
-    ).joins(:questions).joins(
-      "LEFT JOIN tests_users ON tests.id = tests_users.test_id AND tests_users.user_id = #{@current_user.id}"
-    ).group('tests.id')
+    @tests = if user_logged_in?
+               Test.includes(:category).select(
+                 'tests.*, tests_users.completed, COUNT(questions.id) AS count_questions'
+               ).joins(:questions).joins(
+                 "LEFT JOIN tests_users ON tests.id = tests_users.test_id AND tests_users.user_id = #{@current_user.id}"
+               ).group('tests.id')
+             else
+               Test.includes(:category, :questions)
+             end
   end
 
   def show; end
@@ -23,8 +27,7 @@ class TestsController < ApplicationController
   end
 
   def create
-    user = User.find(params[:test][:author_id])
-    @test = user.tests_author.build(test_params)
+    @test = @current_user.tests_author.build(test_params)
     if @test.save
       redirect_to @test
     else
@@ -62,11 +65,7 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def find_current_user
-    @current_user = User.first
-  end
-
-  def resque_with_test_not_found
+  def rescue_with_test_not_found
     render plain: I18n.t('controller.tests.not_found')
   end
 end
