@@ -22,8 +22,7 @@ module Authentication
 
   # Перенаправляет к сохраненному расположению (или по умолчанию).
   def redirect_back_or(default = root_url)
-    redirect_to(cookies[:forwarding_url] || default)
-    cookies.delete(:forwarding_url)
+    redirect_to(cookies.delete(:forwarding_url) || default)
   end
 
   def user_logged_in?
