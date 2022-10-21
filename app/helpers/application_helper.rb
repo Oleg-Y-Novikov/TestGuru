@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  FLASH_TYPE = { notice: :info, alert: :danger }.freeze
   # Возвращает полный заголовок на основе заголовка страницы.
   def full_title(page_title = '')
     base_title = 'TestGuru'
@@ -30,6 +31,6 @@ module ApplicationHelper
   def flash_message(message_type:)
     return if flash[message_type].blank?
 
-    content_tag(:div, flash[message_type], class: "alert alert-#{message_type}")
+    content_tag(:div, flash[message_type], class: "alert alert-#{FLASH_TYPE[message_type] || message_type}")
   end
 end
