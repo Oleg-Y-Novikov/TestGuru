@@ -3,10 +3,11 @@
 <h1><%= @test.title %></h1>
 
 <div class="button_inline">
-  <%= button_to t('page_tests.show_all_tests'), tests_path, method: :get, class: 'btn btn-primary' %>
+  <%= button_to t('page_tests.show_all_tests'), admin_tests_path, method: :get, class: 'btn btn-primary' %>
 </div>
 <div class="button_inline">
-  <%= button_to t('page_questions.create_question'), new_test_question_path(@test), method: :get, class: 'btn btn-primary' %>
+  <%= button_to t('page_questions.create_question'), new_admin_test_question_path(@test),
+                                                     method: :get, class: 'btn btn-primary' %>
 </div>
 
 <% if @test.questions.present? %>

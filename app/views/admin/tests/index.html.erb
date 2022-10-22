@@ -1,7 +1,7 @@
 <% provide(:title, t('page_tests.all_tests')) %>
 
 <h1><%= t('page_tests.all_tests') %></h1>
-
+<%= button_to t('page_tests.create_test'), new_admin_test_path, method: :get, class: "btn btn-primary" %>
 <br>
 <table class="table">
   <thead>
@@ -10,7 +10,7 @@
       <th><%= t('page_tests.level') %></th>
       <th><%= t('page_tests.category') %></th>
       <th><%= t('page_tests.amount_questions') %></th>
-      <th><%= t('global.actions') %></th>
+      <th colspan="4"><%= t('global.actions') %></th>
     </tr>
   </thead>
   <%= render @tests %>

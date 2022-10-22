@@ -73,6 +73,8 @@ ru:
     users:
       changes_saved: 'Изменения успешно сохранены!'
       profile_deleted: 'Профиль удален'
+    admin_base:
+      access_denied: 'В доступе отказано. Обратитесь за помощью к администратору.'
       
   page_users:
     cancel_account: 'Удалить мой аккаунт'

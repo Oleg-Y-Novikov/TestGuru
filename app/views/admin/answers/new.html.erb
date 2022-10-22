@@ -1,0 +1,9 @@
+<% provide(:title, t('page_answers.create_answer')) %>
+
+<div class="center">
+  <h1><%= answer_header %></h1>
+  <%= button_to t('page_answers.show_all_answers'), admin_question_path(@question),
+                                                    method: :get, class: 'btn btn-primary' %>
+</div>
+
+<%= render 'form' %>

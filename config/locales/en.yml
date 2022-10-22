@@ -81,6 +81,8 @@ en:
     users:
       changes_saved: 'Changes saved!'
       profile_deleted: 'Profile deleted!'
+    admin_base:
+      access_denied: 'Access denied. Contact your administrator for help.'
 
   page_users:
     cancel_account: 'Cancel my account'

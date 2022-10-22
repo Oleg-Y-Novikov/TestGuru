@@ -37,6 +37,10 @@ class User < ApplicationRecord
     tests_user.find_by(test_id: test.id)
   end
 
+  def admin?
+    instance_of?(Admin)
+  end
+
   private
 
   def before_save_downcase_email

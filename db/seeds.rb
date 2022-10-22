@@ -3,13 +3,13 @@
 # Generate sample users.
 users = User.create!(
   [
-    { first_name: 'Admin',    last_name: 'User',    email: 'example@admin.ru',    admin: true,  password: 'password' },
-    { first_name: 'Ivan',     last_name: 'Ivanov',  email: 'ivanov@gmail.com',    admin: false, password: 'password' },
-    { first_name: 'Sergey',   last_name: 'Petrov',  email: 'sergey@gmail.com',    admin: false, password: 'password' },
-    { first_name: 'Nikolay',  last_name: 'Zaharov', email: 'nikolay@gmail.com',   admin: false, password: 'password' },
-    { first_name: 'Johnny',   last_name: 'Depp',    email: 'johnny@gmail.com',    admin: false, password: 'password' },
-    { first_name: 'Brad',     last_name: 'Pitt',    email: 'brad@gmail.com',      admin: false, password: 'password' },
-    { first_name: 'Angelina', last_name: 'Jolie',   email: 'angelina@gmail.com',  admin: false, password: 'password' }
+    { first_name: 'Admin',    last_name: 'User',    email: 'example@admin.ru',   type: 'Admin', password: 'password' },
+    { first_name: 'Ivan',     last_name: 'Ivanov',  email: 'ivanov@gmail.com',   type: 'User',  password: 'password' },
+    { first_name: 'Sergey',   last_name: 'Petrov',  email: 'sergey@gmail.com',   type: 'User',  password: 'password' },
+    { first_name: 'Nikolay',  last_name: 'Zaharov', email: 'nikolay@gmail.com',  type: 'User',  password: 'password' },
+    { first_name: 'Johnny',   last_name: 'Depp',    email: 'johnny@gmail.com',   type: 'User',  password: 'password' },
+    { first_name: 'Brad',     last_name: 'Pitt',    email: 'brad@gmail.com',     type: 'User',  password: 'password' },
+    { first_name: 'Angelina', last_name: 'Jolie',   email: 'angelina@gmail.com', type: 'User',  password: 'password' }
   ]
 )
 
