@@ -46,6 +46,7 @@ en:
     thinknetica_school: 'Educational project at the online school Thinknetica'
   hello: "Hello world"
   global:
+    back: 'Back'
     actions: 'Actions'
     form_contains: 'The form contains '
     error: 'error'
@@ -80,9 +81,11 @@ en:
     users:
       changes_saved: 'Changes saved!'
       profile_deleted: 'Profile deleted!'
+
   page_users:
-    delete_profile: 'Delete profile'
-    edit_profile: 'Edit profile'
+    cancel_account: 'Cancel my account'
+    delete_profile: 'Delete account'
+    edit_profile: 'Edit account'
     sign_up: 'Sign up'
     profile: 'You profile'
     count_tests_passed: 'Count tests passed'
@@ -129,3 +132,7 @@ en:
     log_in: 'Log in'
     new_user: 'New user?'
     sign_up: 'Sign up now!'
+
+  mailers:
+    tests:
+      test_completed: 'You just completed the TestGuru test!'

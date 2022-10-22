@@ -16,11 +16,6 @@
       <%= flash_message(message_type: :success) %>
       <%= flash_message(message_type: :notice) %>
       <%= flash_message(message_type: :alert) %>
-      <% if user_signed_in? %>
-        <p class='nav user'>
-          Welcome <b><%= current_user.email %></b> Guru
-        </p>
-      <% end %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
