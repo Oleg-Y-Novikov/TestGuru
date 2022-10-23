@@ -1,5 +1,4 @@
 <tbody>
-  <% if user_signed_in? %>
     <tr>
       <td><%= test.title %></td>
       <td><%= test.level %></td>
@@ -24,19 +23,4 @@
         <% end %>
       </td>
     </tr>
-  <% else %>
-    <tr>
-      <td><%= test.title %></td>
-      <td><%= test.level %></td>
-      <td><%= test.category.title %></td>
-      <td><%= test.questions.size %></td>
-
-      <td>
-        <%= link_to t('global.show'), admin_test_path(test) %> |
-        <%= link_to t('global.edit'), edit_admin_test_path(test) %> |
-        <%= link_to t('global.delete'), admin_test_path(test), method: :delete,
-                                              data: { confirm: t('global.confirm') }, class: 'red' %>
-      </td>
-    </tr>
-  <% end %>
 </tbody>
