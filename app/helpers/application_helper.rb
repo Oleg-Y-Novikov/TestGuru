@@ -2,6 +2,7 @@
 
 module ApplicationHelper
   FLASH_TYPE = { notice: :info, alert: :danger }.freeze
+
   # Возвращает полный заголовок на основе заголовка страницы.
   def full_title(page_title = '')
     base_title = 'TestGuru'
