@@ -3,24 +3,13 @@
       <td><%= test.title %></td>
       <td><%= test.level %></td>
       <td><%= test.category.title %></td>
-      <td><%= test.count_questions %></td>
+      <td><%= test.questions.size %></td>
 
       <td>
         <%= link_to t('global.show'), admin_test_path(test) %> |
         <%= link_to t('global.edit'), edit_admin_test_path(test) %> |
         <%= link_to t('global.delete'), admin_test_path(test), method: :delete,
-                                              data: { confirm: t('global.confirm') }, class: 'red' %> |
-
-        <% if current_user_test_completed?(test) %>
-          <div class="button_inline">
-            <%= button_to t('page_tests.show_result'), result_tests_user_path(current_user.find_test_user(test)),
-                                                       method: :get, class: 'btn btn-success' %>
-          </div>
-        <% else %>
-          <div class="button_inline">
-            <%= button_to t('global.start_test'), start_test_path(test), method: :post, class: 'btn btn-primary' %>
-          </div>
-        <% end %>
+                                        data: { confirm: t('global.confirm') }, class: 'red' %>
       </td>
     </tr>
 </tbody>

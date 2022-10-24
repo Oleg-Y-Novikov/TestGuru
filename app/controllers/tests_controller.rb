@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :find_test, only: :start
-  skip_before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!, except: :index
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -16,20 +15,17 @@ class TestsController < ApplicationController
                  "LEFT JOIN tests_users ON tests.id = tests_users.test_id AND tests_users.user_id = #{current_user.id}"
                ).group('tests.id')
              else
-               Test.includes(:category, :questions)
+               Test.includes(:category).joins(:questions).group('tests.id')
              end
   end
 
   def start
+    @test = Test.find(params[:id])
     current_user.start_test(@test)
     redirect_to current_user.find_test_user(@test)
   end
 
   private
-
-  def find_test
-    @test = Test.find(params[:id])
-  end
 
   def rescue_with_test_not_found
     render plain: I18n.t('controller.tests.not_found')

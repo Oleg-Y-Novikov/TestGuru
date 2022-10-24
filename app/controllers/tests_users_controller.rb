@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TestsUsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_test_user, only: %i[show result update restart]
 
   def show; end
