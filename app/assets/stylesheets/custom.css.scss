@@ -10,6 +10,23 @@ body {
   background-size: cover;
 }
 
+/* admin */
+
+.admin_panel {
+  background-color: rgb(0, 0, 0);
+  margin: auto;
+  position: relative;
+  top: -12px;
+  border-radius: 5px;
+  height: 40px;
+  padding: 2px;
+  width: 300px;
+  
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
 /* header */
 
 #logo {
@@ -30,51 +47,43 @@ body {
 
 /* footer */
 
-.footer {
-  position: absolute;
-	left: 0;
-	bottom: 50px;
-	width: 100%;
-	height: 80px;
+footer {
+  width: 100%;
+  height: 50px;
+  color: rgb(204, 198, 198);
+  position: sticky;
   text-align: center;
+  background-color: #050505;
+}
 
-  .nav {
-    float: center;
-  }
-    ul {
-    float: center;
-    list-style: none;
+/* universal */
 
-    li {
-      float: center;
-    }
-  }
- }
-
- /* universal */
-
- .center {
+.center {
     text-align: center;
- }
+}
 
- .button_inline {
+.button_inline {
     display: inline-block;
- }
+}
 
- .red {
+.red {
   color: red;
- }
+}
 
- .green {
+.green {
   color: green;
- }
+}
 
 
- #error_explanation {
+#error_explanation {
   margin-top: 30px;
   color: red;
   ul {
     color: red;
     margin: 0 0 30px 0;
   }
+}
+
+.nav.user {
+  text-align: right;
 }

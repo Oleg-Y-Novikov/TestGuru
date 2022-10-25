@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: [:admin, @test, @question], local: true) do |f| %>
+
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <p><%= f.label t('page_questions.question_text') %></p>
+      <p><%= f.text_area :body, class: 'form-control' %></p>
+      <p><%= f.submit correct_button_title(object: @question), class: 'btn btn-primary btn-block' %></p>
+    <% end %>
+  </div>
+</div>

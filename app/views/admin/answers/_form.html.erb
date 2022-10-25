@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: [:admin, @question, @answer], local: true) do |f| %>
+
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body, class: 'form-control' %>
+      </p>
+
+      <div class="form-check form-switch">
+        <%= f.label :correct %>
+        <%= f.check_box :correct %>
+      </div>
+      <p><%= f.submit correct_button_title(object: @answer), class: 'btn btn-primary btn-block' %></p>
+    <% end %>
+  </div>
+</div>

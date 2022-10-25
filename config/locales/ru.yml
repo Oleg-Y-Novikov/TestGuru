@@ -8,8 +8,12 @@ ru:
               required: "должна существовать"
         user:
           attributes:
-            name:
+            first_name:
               blank: 'не может быть пустым'
+              too_long: 'слишком длинное (максимум 30 символов)'
+            last_name:
+              blank: 'не может быть пустым'
+              too_long: 'слишком длинное (максимум 30 символов)'
             email:
               blank: 'не может быть пустым'
               invalid: 'электронная почта не действительна'
@@ -20,6 +24,8 @@ ru:
               too_long: 'слишком длинный (максимум 72 символа)'
             password_confirmation:
               confirmation: 'подтверждение пароля не совпадает с паролем'
+            current_password:
+              blank: 'не может быть пустым'
 
   validate_errors:
     error:
@@ -32,6 +38,7 @@ ru:
     thinknetica_school: 'Учебный проект в онлайн-школе Thinknetica'
   hello: "Привет Мир"
   global:
+    back: 'Назад'
     actions: 'Действия'
     form_contains: 'В форме содержится '
     error: 'ошибка'
@@ -66,10 +73,13 @@ ru:
     users:
       changes_saved: 'Изменения успешно сохранены!'
       profile_deleted: 'Профиль удален'
+    admin_base:
+      access_denied: 'В доступе отказано. Обратитесь за помощью к администратору.'
       
   page_users:
-    delete_profile: 'Удалить профиль'
-    edit_profile: 'Изменить профиль'
+    cancel_account: 'Удалить мой аккаунт'
+    delete_profile: 'Удалить аккаунт'
+    edit_profile: 'Изменить аккаунт'
     sign_up: 'Зарегистрироваться'
     profile: 'Ваш профиль'
     count_tests_passed: 'Колличество пройденых тестов'
@@ -116,3 +126,7 @@ ru:
     log_in: 'Войти'
     new_user: 'Новый пользователь?'
     sign_up: 'Зарегистрируйтесь сейчас!'
+
+  mailers:
+    tests:
+      test_completed: 'Вы только что прошли тест TestGuru!'

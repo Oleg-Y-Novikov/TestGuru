@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TestsUsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_test_user, only: %i[show result update restart]
 
   def show; end
@@ -11,6 +12,7 @@ class TestsUsersController < ApplicationController
     @test_user.accept!(params[:answer_ids])
 
     if @test_user.completed?
+      TestsMailer.completed_test(@test_user).deliver_now
       redirect_to result_tests_user_path(@test_user)
     else
       render :show

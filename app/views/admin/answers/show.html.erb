@@ -1,0 +1,16 @@
+<h1><%= @answer.question.body %></h1>
+<%= button_to t('page_answers.show_all_answers'), admin_question_path(@answer.question),
+                                                  method: :get, class: 'btn btn-primary' %>
+<br>
+
+<table class='table'>
+  <tr>
+    <td><%= @answer.body %></td>
+    <td>Correct: <%= @answer.correct %></td>
+    <td>
+      <%= link_to t('global.edit'), edit_admin_answer_path(@answer) %> |
+      <%= link_to t('global.delete'), admin_answer_path(@answer), method: :delete,
+                                                                  data: { confirm: t('global.confirm') }, class: 'red' %>
+    </td>
+  </tr>
+</table>
