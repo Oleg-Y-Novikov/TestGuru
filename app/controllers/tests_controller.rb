@@ -9,13 +9,9 @@ class TestsController < ApplicationController
   # атрибут говорит о полном прохождении Теста текущим пользователем
   def index
     @tests = if user_signed_in?
-               Test.includes(:category).select(
-                 'tests.*, tests_users.completed, COUNT(questions.id) AS count_questions'
-               ).joins(:questions).joins(
-                 "LEFT JOIN tests_users ON tests.id = tests_users.test_id AND tests_users.user_id = #{current_user.id}"
-               ).group('tests.id')
+               Test.show_tests_for_current_user(current_user)
              else
-               Test.includes(:category).joins(:questions).group('tests.id')
+               Test.includes(:category, :questions).joins(:questions).group('tests.id')
              end
   end
 

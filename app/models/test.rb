@@ -34,4 +34,12 @@ class Test < ApplicationRecord
   def self.array_test_title_desc(category_title)
     test_title_desc(category_title).pluck(:title)
   end
+
+  def self.show_tests_for_current_user(current_user)
+    includes(:category).select(
+      'tests.*, tests_users.completed, COUNT(questions.id) AS count_questions'
+    ).joins(:questions).joins(
+      "LEFT JOIN tests_users ON tests.id = tests_users.test_id AND tests_users.user_id = #{current_user.id}"
+    ).group('tests.id')
+  end
 end
