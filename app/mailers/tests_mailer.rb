@@ -5,6 +5,6 @@ class TestsMailer < ApplicationMailer
     @user = test_user.user
     @test = test_user.test
 
-    mail to: @user.email, subject: I18n.t('mailers.tests.test_completed')
+    mail to: @user.email  # subject: I18n.t('tests_mailer.completed_test.subject')
   end
 end
