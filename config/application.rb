@@ -13,6 +13,7 @@ module TestGuru
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     config.time_zone = 'Europe/Moscow'
+    I18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.yml")]
     config.available_locales = %i[ru en]
     config.i18n.default_locale = :ru
   end
