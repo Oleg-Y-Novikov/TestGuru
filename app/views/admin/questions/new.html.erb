@@ -1,8 +1,6 @@
-<% provide(:title, t('page_questions.create_question')) %>
-
 <div class="center">
   <h1><%= question_header(@test.title) %></h1>
-  <%= button_to t('page_questions.show_all_questions'), admin_test_path(@test), method: :get, class: "btn btn-primary" %>
+  <%= button_to t('admin.questions.show_all_questions'), admin_test_path(@test), method: :get, class: "btn btn-primary" %>
 </div>
 
 <%= render 'form' %>

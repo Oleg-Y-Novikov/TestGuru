@@ -3,7 +3,7 @@
 class Answer < ApplicationRecord
   belongs_to :question
 
-  validates :body, presence: { message: I18n.t('model.cant_be_blank') }
+  validates :body, presence: true
   validate :validate_quantity_answers, on: :create
 
   scope :correct, -> { where(correct: true) }
@@ -12,6 +12,9 @@ class Answer < ApplicationRecord
 
   # проверяет, что у одного Вопроса может быть не более 4-х Ответов
   def validate_quantity_answers
-    errors.add(:quantity_answers, I18n.t('model.answer.limit_answers')) if question.answers.count >= 4
+    return if question.answers.count < 4
+
+    errors.add(:quantity_answers, I18n.t(:quantity_answers, scope: [:activerecord, :errors,
+                                                                    :models, :answer, :messages]))
   end
 end

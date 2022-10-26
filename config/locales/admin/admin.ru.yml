@@ -1,0 +1,61 @@
+ru:
+  admin:
+    tests:
+      show_all_tests: 'Показать все тесты'
+      index:
+        all_tests: 'Все тесты'
+        test: 'Тест'
+        category: 'Категория'
+        amount_questions: 'Колличество вопросов'
+        create_test: 'Создать новый тест'
+      new:
+        create_new_test: 'Создайте новый тест'
+      edit:
+        edit_test: 'Отредактируйте тест'
+      show:
+        create_question: 'Создать вопрос'
+        no_questions: 'Пока нет ни одного вопроса.'
+        all_questions: 'Все вопросы'
+        question: 'Вопрос'
+
+    questions:
+      show_all_questions: 'показать все вопросы'
+      new:
+        create_new_question: "Создайте новый |%{test_title}| вопрос"
+      edit:
+        edit_question: 'Редактировать |%{test_title}| вопрос'
+      show:
+        answers: 'Ответы'
+        create_answer: 'Создать ответ'
+
+    answers:
+      show_all_answers: 'Показать все ответы'
+      edit:
+        edit_answer: 'Отредактируйте ответ'
+      new:
+        create_new_answer: 'Создайте новый ответ'
+
+  helpers:
+    submit:
+      test:
+        create: 'Создать тест'
+        update: 'Отредактировать тест'
+      question:
+        create: 'Создать вопрос'
+        update: 'Отредактировать вопрос'
+      answer:
+        create: 'Создать ответ'
+        update: 'Отредактировать ответ'
+    select:
+      prompt: "Выберите:"
+
+    label:
+      test:
+        title: 'Название теста'
+        level: 'Уровень'
+        category: 'Категория'
+      question:
+        body: 'Текст вопроса'
+      answer:
+        body: 'Текст ответа'
+        correct: 'Корректный?'

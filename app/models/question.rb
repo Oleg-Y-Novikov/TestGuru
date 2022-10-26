@@ -6,5 +6,5 @@ class Question < ApplicationRecord
   has_many :tests_user, foreign_key: :current_question, dependent: :destroy
   has_many :answers, dependent: :destroy
 
-  validates :body, presence: { message: I18n.t('model.cant_be_blank') }
+  validates :body, presence: true
 end

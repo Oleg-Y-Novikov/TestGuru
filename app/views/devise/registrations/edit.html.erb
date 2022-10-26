@@ -1,7 +1,7 @@
-<% provide(:title, t('page_users.edit_profile')) %>
+<% provide(:title, t('.edit_profile')) %>
 
 <div class="center">
-  <h1><%= t('page_users.edit_profile') %></h1>
+  <h1><%= t('.edit_profile') %></h1>
 </div>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -47,14 +47,14 @@
         </div><br>
 
         <div class="actions">
-          <%= f.submit correct_button_title(object: f.object), class: 'btn btn-primary btn-block' %>
+          <%= f.submit t('.edit_profile'), class: 'btn btn-primary btn-block' %>
         </div>
     <% end %>
     <div class="center">
-      <h4><%= t('page_users.cancel_account') %></h4>
+      <h4><%= t('.cancel_account') %></h4>
     </div>
     <p>
-      <%= button_to t('page_users.delete_profile'), registration_path(resource_name), 
+      <%= button_to t('.delete_profile'), registration_path(resource_name), 
                     data: { confirm: t('global.confirm') }, method: :delete, class: 'btn btn-danger btn-block' %>
     </p>
 

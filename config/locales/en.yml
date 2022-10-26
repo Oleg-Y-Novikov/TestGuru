@@ -30,21 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  activerecord:
-    errors:
-      models:
-        test:
-          attributes:
-            category:
-              required: "Category must exist"
-  validate_errors:
-    error:
-      one: "The form contains %{count} error"
-      other: "The form contains %{count} errors"
-  footer:
-    app_description: '- application is designed to create, manage and run various tests, author by'
-    thinknetica_school: 'Educational project at the online school Thinknetica'
-  hello: "Hello world"
   global:
     back: 'Back'
     actions: 'Actions'
@@ -57,14 +42,37 @@ en:
     delete: 'Delete'
     confirm: 'You sure?'
     start_test: 'Start Test'
-  model:
-    must_exist: 'must exist'
-    cant_be_blank: "can't be blank"
-    only_integer: 'only an integer greater than or equal to 0'
-    answer:
-      limit_answers: 'exceeded the limit of answers to the question (maximum 4)'
+
+  tests:
+    index:
+      all_tests: 'All tests'
+      test: 'Test'
+      title: 'Test title'
+      level: 'Level'
+      category: 'Category'
+      amount_questions: 'Amount questions'
     test:
-      test_exists: 'test with this level of complexity already exists'
+      show_result: 'Show result'
+      start_test: 'Start Test'
+
+  tests_users:
+    show:
+      passing_test: 'Passing test'
+      reply: 'Reply'
+    result:
+      test: 'Test'
+      passed: 'Passed'
+      success: 'Congratulations! You have successfully passed the test!'
+      result: "Your result = "
+      correct_answers: 'correct answers'
+      failure: 'Test failed'
+      pass_again: 'Pass again'
+      show_all_tests: 'Show all tests'
+
+  footer:
+    app_description: '- application is designed to create, manage and run various tests, author by'
+    thinknetica_school: 'Educational project at the online school Thinknetica'
+
   controller:
     questions:
       not_found: 'The question is not found'
@@ -75,66 +83,9 @@ en:
       not_found: 'The answer is not found'
     sessions:
       welcome: 'Welcome, %{user_name} Guru'
-      log_in_fail: 'Invalid email/password combination'
-      log_out: 'Logged out!'
-      access_denied: 'You must be logged in to access this page'
-    users:
-      changes_saved: 'Changes saved!'
-      profile_deleted: 'Profile deleted!'
     admin_base:
       access_denied: 'Access denied. Contact your administrator for help.'
-
-  page_users:
-    cancel_account: 'Cancel my account'
-    delete_profile: 'Delete account'
-    edit_profile: 'Edit account'
-    sign_up: 'Sign up'
-    profile: 'You profile'
-    count_tests_passed: 'Count tests passed'
-  page_questions:
-    create_new_question: "Create new |%{test_title}| question"
-    edit_question: 'Edit a question'
-    question_text: 'question text:'
-    create_question: 'Create question'
-    question: 'Question:'
-    show_all_questions: 'show all questions'
-    all_questions: 'All questions:'
-    show_question: 'Show question'
-  page_tests:
-    no_questions: 'There are no questions yet.'
-    all_tests: 'All tests'
-    test: 'Test'
-    title: 'Test title'
-    level: 'Level'
-    category: 'Category'
-    author: 'Author'
-    amount_questions: 'Amount questions'
-    show_all_tests: 'Show all tests'
-    create_test: 'Create test'
-    create_new_test: 'Create new test'
-    edit_test: 'Edit test'
-    show_result: 'Show result'
-  page_answers:
-    create_answer: 'Create answer'
-    answers: 'Answers'
-    create_new_answer: 'Create new answer'
-    edit_answer: 'Edit answer'
-    show_all_answers: 'Show all answers'
-    answer_body: 'Body'
-  page_passing_test:
-    passing_test: 'Passing test'
-    reply: 'Reply'
-    passed: 'Passed'
-    success: 'Congratulations! You have successfully passed the test!'
-    result: "Your result = "
-    correct_answers: 'correct answers'
-    failure: 'Test failed'
-    pass_again: 'Pass again'
-  page_sessions:
-    log_in: 'Log in'
-    new_user: 'New user?'
-    sign_up: 'Sign up now!'
-
-  mailers:
-    tests:
-      test_completed: 'You just completed the TestGuru test!'
+      
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed the TestGuru test!'

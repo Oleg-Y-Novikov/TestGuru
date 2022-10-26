@@ -1,21 +1,21 @@
 <div class="center">
-  <h1><%= t('page_tests.test')%> | <%= @test_user.test.title %> | <%= t('page_passing_test.passed') %></h1>
+  <h1><%= t('.test')%> | <%= @test_user.test.title %> | <%= t('.passed') %></h1>
 
   <% if @test_user.test_passage_success? %>
     <h4 style="margin-top: 100px">
-      <%= t('page_passing_test.success') %><br>
-      <%= t('page_passing_test.result') %> <span class="green"><%=@test_user.result%>%</span> <%= t('page_passing_test.correct_answers') %>
+      <%= t('.success') %><br>
+      <%= t('.result') %> <span class="green"><%=@test_user.result%>%</span> <%= t('.correct_answers') %>
     </h4>
   <% else %>
     <h4 style="margin-top: 100px">
-      <%= t('page_passing_test.failure') %><br>
-      <%= t('page_passing_test.result') %> <span class="red"><%=@test_user.result%>%</span> <%= t('page_passing_test.correct_answers') %>
+      <%= t('.failure') %><br>
+      <%= t('.result') %> <span class="red"><%=@test_user.result%>%</span> <%= t('.correct_answers') %>
     </h4>
   <% end %>
   <div class="button_inline">
-    <%= button_to t('page_tests.show_all_tests'), tests_path, method: :get, class: 'btn btn-primary' %>
+    <%= button_to t('.show_all_tests'), tests_path, method: :get, class: 'btn btn-primary' %>
   </div>
   <div class="button_inline">
-    <%= button_to t('page_passing_test.pass_again'), restart_tests_user_path(@test_user), method: :put, class: 'btn btn-primary' %>
+    <%= button_to t('.pass_again'), restart_tests_user_path(@test_user), method: :put, class: 'btn btn-primary' %>
   </div>
 </div>

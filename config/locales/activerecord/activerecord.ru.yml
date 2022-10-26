@@ -1,0 +1,48 @@
+ru:
+  activerecord:
+    models:
+      test: "Тест"
+      category: 'Категория'
+      admin: 'Администратор'
+      answer: 'Ответ'
+      question: 'Вопрос'
+      user: 'Пользователь'
+
+    attributes:
+      test:
+        title: 'Название'
+        level: 'Уровень'
+        category: 'Категория'
+
+      category:
+        title: 'Название'
+
+      user:
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        email: 'Электронная почта'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
+
+      answer:
+        body: 'Текст ответа'
+        question: 'Вопрос'
+        quantity_answers: 'Колличество ответов'
+
+      question:
+        body: 'Текст вопроса'
+        test: "Тест"
+
+    errors:
+      models:
+        answer:
+          messages:
+            quantity_answers: 'превышен лимит ответов на вопрос (максимум 4)'
+      
+  validate_errors:
+    error:
+      one: "Форма содержит %{count} ошибку"
+      few: "Форма содержит %{count} ошибки"
+      many: "Форма содержит %{count} ошибок"
+      other: "Форма содержит %{count} ошибок"

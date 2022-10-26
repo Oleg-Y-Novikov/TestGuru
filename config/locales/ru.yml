@@ -1,42 +1,4 @@
 ru:
-  activerecord:
-    errors:
-      models:
-        test:
-          attributes:
-            category:
-              required: "должна существовать"
-        user:
-          attributes:
-            first_name:
-              blank: 'не может быть пустым'
-              too_long: 'слишком длинное (максимум 30 символов)'
-            last_name:
-              blank: 'не может быть пустым'
-              too_long: 'слишком длинное (максимум 30 символов)'
-            email:
-              blank: 'не может быть пустым'
-              invalid: 'электронная почта не действительна'
-              taken: 'электронная почта уже занята'
-            password:
-              blank: 'не может быть пустым'
-              too_short: 'слишком кароткий (минимум 6 символов)'
-              too_long: 'слишком длинный (максимум 72 символа)'
-            password_confirmation:
-              confirmation: 'подтверждение пароля не совпадает с паролем'
-            current_password:
-              blank: 'не может быть пустым'
-
-  validate_errors:
-    error:
-      one: "Форма содержит %{count} ошибку"
-      few: "Форма содержит %{count} ошибки"
-      many: "Форма содержит %{count} ошибок"
-      other: "Форма содержит %{count} ошибок"
-  footer:
-    app_description: '- приложение предназначено для создания, управления и запуска различных тестов, автор'
-    thinknetica_school: 'Учебный проект в онлайн-школе Thinknetica'
-  hello: "Привет Мир"
   global:
     back: 'Назад'
     actions: 'Действия'
@@ -48,15 +10,38 @@ ru:
     edit: 'Редактировать'
     delete: 'Удалить'
     confirm: 'Вы уверены?'
-    start_test: 'Пройти тест'
-  model:
-    must_exist: 'должна существовать'
-    cant_be_blank: 'не может быть пустым'
-    only_integer: 'только целое число, больше либо равное 0'
-    answer:
-      limit_answers: 'превышен лимит ответов на вопрос (максимум 4)'
+
+  tests:
+    index:
+      all_tests: 'Все тесты'
+      test: 'Тест'
+      title: 'Название теста'
+      level: 'Уровень'
+      category: 'Категория'
+      amount_questions: 'Колличество вопросов'
     test:
-      test_exists: 'тест с таким уровнем сложности уже существует' 
+      show_result: 'Показать результат'
+      start_test: 'Пройти тест'
+
+  tests_users:
+    show:
+      passing_test: 'Прохождение теста'
+      reply: 'Ответить'
+    result:
+      test: 'Тест'
+      passed: 'Завершен'
+      success: 'Поздравляем! Вы успешно прошли тест!'
+      result: "Ваш результат = "
+      correct_answers: 'верных ответов'
+      failure: 'Тест не пройден'
+      pass_again: 'Пройти снова'
+      show_all_tests: 'Показать все тесты'
+
+
+  footer:
+    app_description: '- приложение предназначено для создания, управления и запуска различных тестов, автор'
+    thinknetica_school: 'Учебный проект в онлайн-школе Thinknetica'
+
   controller:
     questions:
       not_found: 'Вопрос не найден'
@@ -67,66 +52,9 @@ ru:
       not_found: 'Ответ не найден'
     sessions:
       welcome: 'Добро пожаловать, %{user_name} Guru'
-      log_in_fail: 'Неверная комбинация электронной почты и пароля'
-      log_out: 'Вы вышли из TestGuru!'
-      access_denied: 'Вы должны войти в систему, чтобы получить доступ к этой странице'
-    users:
-      changes_saved: 'Изменения успешно сохранены!'
-      profile_deleted: 'Профиль удален'
     admin_base:
       access_denied: 'В доступе отказано. Обратитесь за помощью к администратору.'
       
-  page_users:
-    cancel_account: 'Удалить мой аккаунт'
-    delete_profile: 'Удалить аккаунт'
-    edit_profile: 'Изменить аккаунт'
-    sign_up: 'Зарегистрироваться'
-    profile: 'Ваш профиль'
-    count_tests_passed: 'Колличество пройденых тестов'
-  page_questions:
-    create_question: 'Создайте вопрос'
-    create_new_question: "Создайте новый |%{test_title}| вопрос"
-    edit_question: 'Редактировать |%{test_title}| вопрос'
-    question_text: 'Текс вопроса:'
-    create_question: 'Создать вопрос'
-    question: 'Вопрос'
-    show_all_questions: 'показать все вопросы'
-    all_questions: 'Все вопросы'
-  page_tests:
-    no_questions: 'Пока нет ни одного вопроса.'
-    all_tests: 'Все тесты'
-    test: 'Тест'
-    title: 'Название теста'
-    level: 'Уровень'
-    category: 'Категория'
-    author: 'Автор'
-    amount_questions: 'Колличество вопросов'
-    show_all_tests: 'Показать все тесты'
-    create_test: 'Создать тест'
-    create_new_test: 'Создайте новый тест'
-    edit_test: 'Отредактируйте тест'
-    show_result: 'Показать результат'
-  page_answers:
-    create_answer: 'Создать ответ'
-    answers: 'Ответы'
-    create_new_answer: 'Создайте новый ответ'
-    edit_answer: 'Отредактируйте ответ'
-    show_all_answers: 'Показать все ответы'
-    answer_body: 'Текст ответа'
-  page_passing_test:
-    passing_test: 'Прохождение теста'
-    reply: 'Ответить'
-    passed: 'Завершен'
-    success: 'Поздравляем! Вы успешно прошли тест!'
-    result: "Ваш результат = "
-    correct_answers: 'верных ответов'
-    failure: 'Тест не пройден'
-    pass_again: 'Пройти снова'
-  page_sessions:
-    log_in: 'Войти'
-    new_user: 'Новый пользователь?'
-    sign_up: 'Зарегистрируйтесь сейчас!'
-
-  mailers:
-    tests:
-      test_completed: 'Вы только что прошли тест TestGuru!'
+  tests_mailer:
+    completed_test:
+      subject: 'Вы только что прошли тест TestGuru!'

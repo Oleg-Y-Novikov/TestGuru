@@ -8,13 +8,9 @@ class Test < ApplicationRecord
   has_many :tests_user, dependent: :destroy
   has_many :users, through: :tests_user, dependent: :destroy
 
-  validates :title, presence: { message: I18n.t('model.cant_be_blank') }
-  validates :level, numericality: { only_integer: true,
-                                    greater_than_or_equal_to: 0,
-                                    message: I18n.t('model.only_integer') }
-  validates :title, uniqueness: { scope: :level,
-                                  case_sensitive: false,
-                                  message: I18n.t('model.test.test_exists') }
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :title, uniqueness:   { scope: :level, case_sensitive: false }
 
   # возвращает объект ActiveRecord::Relation с отфильтрованными тестами по уровню сложности
   scope :easy_level,   -> { where(level: 0..1) }
