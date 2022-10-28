@@ -1,0 +1,49 @@
+en:
+  activerecord:
+    models:
+      test: 'Test'
+      category: 'Category'
+      admin: 'Administrator'
+      answer: 'Answer'
+      question: 'Question'
+      user: 'User'
+
+    attributes:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category: 'Category'
+
+      category:
+        title: 'Title'
+
+      user:
+        first_name: 'First_name'
+        last_name: 'Last_name'
+        email: 'Email'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        current_password: 'Сurrent password'
+
+      answer:
+        body: 'Response text'
+        question: 'Question'
+        quantity_answers: 'Quantity answers'
+
+      question:
+        body: 'Question text'
+        test: "Test"
+
+    errors:
+      models:
+        answer:
+          messages:
+            quantity_answers: 'exceeded the limit of answers to the question (maximum 4)'
+
+        user:
+          attributes:
+
+  validate_errors:
+    error:
+      one: "%{count} error detected"
+      other: "%{count} errors detected"

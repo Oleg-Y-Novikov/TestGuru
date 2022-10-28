@@ -1,7 +1,7 @@
-<% provide(:title, t('page_users.profile')) %>
+<% provide(:title, t('.profile')) %>
 
 <div class="center">
-  <h1><%= t('page_users.profile') %></h1>
+  <h1><%= t('.profile') %></h1>
 </div>
 <br>
 <h4><b> Name </b></h4>
@@ -10,5 +10,5 @@
 <h4><b> Email </b></h4>
 <p><%= current_user.email %></p>
 
-<h4><b><%= t('page_users.count_tests_passed') %></b></h4>
+<h4><b><%= t('.count_tests_passed') %></b></h4>
 <p><%= current_user.tests_passed.count %></p>

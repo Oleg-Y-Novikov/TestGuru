@@ -1,4 +1,4 @@
-<% provide(:title, t('page_passing_test.passing_test')) %>
+<% provide(:title, t('.passing_test')) %>
 
 <div class="center">
   <h1><%= @test_user.test.title %></h1>
@@ -14,5 +14,5 @@
       <%= b.label %>
     </p>
   <% end %>
-  <p><%= f.submit t('page_passing_test.reply'), class: "btn btn-primary" %></p>
+  <p><%= f.submit t('tests_users.show.reply'), class: "btn btn-primary" %></p>
 <% end %>

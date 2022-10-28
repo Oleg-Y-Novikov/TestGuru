@@ -1,0 +1,61 @@
+en:
+  admin:
+    tests:
+      show_all_tests: 'Show all tests'
+      index:
+        all_tests: 'All tests'
+        test: 'Test'
+        category: 'Category'
+        amount_questions: 'Amount of questions'
+        create_test: 'Create new test'
+      new:
+        create_new_test: 'Create new test'
+      edit:
+        edit_test: 'Edit test'
+      show:
+        create_question: 'Create new question'
+        no_questions: 'There are no questions yet.'
+        all_questions: 'All questions'
+        question: 'Question'
+
+    questions:
+      show_all_questions: 'Show all questions'
+      new:
+        create_new_question: "Create new |%{test_title}| question"
+      edit:
+        edit_question: 'Edit |%{test_title}| question'
+      show:
+        answers: 'Answers'
+        create_answer: 'Create answer'
+
+    answers:
+      show_all_answers: 'Show all answers'
+      edit:
+        edit_answer: 'Edit answer'
+      new:
+        create_new_answer: 'Create new answer'
+
+  helpers:
+    submit:
+      test:
+        create: 'Create test'
+        update: 'Edit test'
+      question:
+        create: 'Create question'
+        update: 'Edit question'
+      answer:
+        create: 'Create answer'
+        update: 'Edit answer'
+    select:
+      prompt: "Please select"
+
+    label:
+      test:
+        title: 'Test title'
+        level: 'Level'
+        category: 'Category'
+      question:
+        body: 'Question body'
+      answer:
+        body: 'Answer body'
+        correct: 'Correct?'
