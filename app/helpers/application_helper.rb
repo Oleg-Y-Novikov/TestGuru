@@ -29,10 +29,4 @@ module ApplicationHelper
 
     content_tag(:div, flash[message_type], class: "alert alert-#{FLASH_TYPE[message_type] || message_type}")
   end
-
-  def correct_root_path
-    return root_path if current_user.blank?
-
-    current_user.admin? ? admin_tests_path : root_path
-  end
 end
