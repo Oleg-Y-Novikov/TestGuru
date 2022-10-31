@@ -59,6 +59,7 @@ en:
     show:
       passing_test: 'Passing test'
       reply: 'Reply'
+      create_github_gist: 'Create GitHub gist'
     result:
       test: 'Test'
       passed: 'Passed'
@@ -68,6 +69,16 @@ en:
       failure: 'Test failed'
       pass_again: 'Pass again'
       show_all_tests: 'Show all tests'
+    gist:
+      success: 'Gist saved successfully! Link:'
+      failure: 'an error occurred while saving gist'
+
+
+  services:
+    gist_question:
+      gist_params:
+        description: "Question for the test %{test_title} from TestGuru"
+
 
   footer:
     app_description: '- application is designed to create, manage and run various tests, author by'

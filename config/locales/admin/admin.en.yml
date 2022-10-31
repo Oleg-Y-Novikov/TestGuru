@@ -8,6 +8,7 @@ en:
         category: 'Category'
         amount_questions: 'Amount of questions'
         create_test: 'Create new test'
+        show_all_gists: 'Show all Gists'
       new:
         create_new_test: 'Create new test'
       edit:
@@ -17,6 +18,12 @@ en:
         no_questions: 'There are no questions yet.'
         all_questions: 'All questions'
         question: 'Question'
+    gists:
+      index:
+        all_gists: 'All Gists'
+        questions: 'Question'
+        gist_url: 'Gist URL'
+        user: 'User'
 
     questions:
       show_all_questions: 'Show all questions'
