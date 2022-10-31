@@ -14,5 +14,7 @@
       <%= b.label %>
     </p>
   <% end %>
+
+  <p><%= link_to t('.create_github_gist'), gist_tests_user_path(@test_user), method: :post %></p>
   <p><%= f.submit t('tests_users.show.reply'), class: "btn btn-primary" %></p>
 <% end %>

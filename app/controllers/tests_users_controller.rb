@@ -2,7 +2,7 @@
 
 class TestsUsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_test_user, only: %i[show result update restart]
+  before_action :set_test_user, only: %i[show result update restart gist]
 
   def show; end
 
@@ -21,6 +21,17 @@ class TestsUsersController < ApplicationController
 
   def restart
     @test_user.start_test_user_params!
+    redirect_to @test_user
+  end
+
+  def gist
+    service = GistQuestionService.new(@test_user.current_question)
+    if service.create_github_gist
+      gist = service.save_gist(current_user, @test_user.current_question)
+      flash[:success] = "#{t('.success')} #{view_context.link_to 'Gist', gist.gist_url}"
+    else
+      flash[:danger] = t('.failure')
+    end
     redirect_to @test_user
   end
 

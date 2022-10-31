@@ -11,6 +11,7 @@ Bundler.require(*Rails.groups)
 module TestGuru
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.autoload_paths << "#{Rails.root}/lib/clients"
     config.load_defaults 6.1
     config.time_zone = 'Europe/Moscow'
     I18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.yml")]
