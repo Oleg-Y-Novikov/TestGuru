@@ -69,15 +69,20 @@ en:
       failure: 'Test failed'
       pass_again: 'Pass again'
       show_all_tests: 'Show all tests'
-    gist:
+
+  gists:
+    create:
       success: 'Gist saved successfully! Link:'
       failure: 'an error occurred while saving gist'
-
 
   services:
     gist_question:
       gist_params:
         description: "Question for the test %{test_title} from TestGuru"
+      github_access_token:
+        not_found: 'GitHub token not found'
+        invalid: 'GitHub token is invalid'
+      github_not_available: 'The GitHub resource is not responding. Try again later.'
 
 
   footer:

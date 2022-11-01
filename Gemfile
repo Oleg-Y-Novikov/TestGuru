@@ -28,7 +28,6 @@ gem 'jbuilder',                  '~> 2.7'
 gem 'devise',                    '~> 4.0'
 
 # NETWORKING
-gem 'faraday'
 gem "octokit",                   '~> 5.0'
 
 # Use Active Storage variant

@@ -252,7 +252,6 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise (~> 4.0)
   dotenv-rails
-  faraday
   jbuilder (~> 2.7)
   letter_opener (= 1.8.1)
   listen (~> 3.3)

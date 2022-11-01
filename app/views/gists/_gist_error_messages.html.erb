@@ -1,0 +1,9 @@
+<% if object[:errors].present? %>
+  <div id="error_explanation">
+    <ul>
+      <% object[:errors].each_value do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

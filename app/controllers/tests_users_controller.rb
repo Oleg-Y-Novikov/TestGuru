@@ -24,17 +24,6 @@ class TestsUsersController < ApplicationController
     redirect_to @test_user
   end
 
-  def gist
-    service = GistQuestionService.new(@test_user.current_question)
-    if service.create_github_gist
-      gist = service.save_gist(current_user, @test_user.current_question)
-      flash[:success] = "#{t('.success')} #{view_context.link_to 'Gist', gist.gist_url}"
-    else
-      flash[:danger] = t('.failure')
-    end
-    redirect_to @test_user
-  end
-
   private
 
   def set_test_user
