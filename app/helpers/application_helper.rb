@@ -27,6 +27,6 @@ module ApplicationHelper
   def flash_message(message_type:)
     return if flash[message_type].blank?
 
-    content_tag(:div, flash[message_type], class: "alert alert-#{FLASH_TYPE[message_type] || message_type}")
+    content_tag(:div, flash[message_type].html_safe, class: "alert alert-#{FLASH_TYPE[message_type] || message_type}")
   end
 end

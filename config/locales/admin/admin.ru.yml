@@ -8,6 +8,7 @@ ru:
         category: 'Категория'
         amount_questions: 'Колличество вопросов'
         create_test: 'Создать новый тест'
+        show_all_gists: 'Показать все Gists'
       new:
         create_new_test: 'Создайте новый тест'
       edit:
@@ -17,6 +18,12 @@ ru:
         no_questions: 'Пока нет ни одного вопроса.'
         all_questions: 'Все вопросы'
         question: 'Вопрос'
+    gists:
+      index:
+        all_gists: 'Все Gists'
+        question: 'Вопрос'
+        gist_url: 'Gist URL'
+        user: 'Пользователь'
 
     questions:
       show_all_questions: 'показать все вопросы'

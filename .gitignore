@@ -6,7 +6,7 @@
 
 # Ignore ruby-version file
 .ruby-version
-
+.env
 # Ignore bundler config.
 /.bundle
 

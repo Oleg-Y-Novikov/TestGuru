@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :tests_author, class_name: 'Test', foreign_key: :author_id, dependent: :destroy
   has_many :tests_user, dependent: :destroy
   has_many :tests, through: :tests_user, dependent: :destroy
+  has_many :gists, dependent: :destroy
 
   validates :first_name,  presence: true, length: { maximum: 30 }
   validates :last_name,   presence: true, length: { maximum: 30 }

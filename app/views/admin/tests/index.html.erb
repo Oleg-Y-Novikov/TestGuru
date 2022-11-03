@@ -1,7 +1,12 @@
 <% provide(:title, t('.all_tests')) %>
 
 <h1><%= t('.all_tests') %></h1>
-<%= button_to t('.create_test'), new_admin_test_path, method: :get, class: "btn btn-primary" %>
+<div class='button_inline'>
+  <%= button_to t('.create_test'), new_admin_test_path, method: :get, class: "btn btn-primary" %>
+</div>
+<div class='button_inline'>
+  <%= button_to t('.show_all_gists'), admin_gists_path, method: :get, class: "btn btn-primary" %>
+</div>
 <br>
 <table class="table">
   <thead>

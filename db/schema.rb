@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_22_093145) do
+ActiveRecord::Schema.define(version: 2022_10_31_161106) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 2022_10_22_093145) do
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "gists", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "question_id", null: false
+    t.string "gist_id", null: false
+    t.string "gist_url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_gists_on_question_id"
+    t.index ["user_id", "question_id"], name: "index_gists_on_user_id_and_question_id", unique: true
+    t.index ["user_id"], name: "index_gists_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -88,6 +100,8 @@ ActiveRecord::Schema.define(version: 2022_10_22_093145) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "gists", "questions"
+  add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"

@@ -27,6 +27,7 @@ ru:
     show:
       passing_test: 'Прохождение теста'
       reply: 'Ответить'
+      create_github_gist: 'Создать Gist на GitHub'
     result:
       test: 'Тест'
       passed: 'Завершен'
@@ -36,6 +37,22 @@ ru:
       failure: 'Тест не пройден'
       pass_again: 'Пройти снова'
       show_all_tests: 'Показать все тесты'
+
+  gists:
+    create:
+      success: 'Gist успешно сохранен! Ссылка: '
+      failure: 'во время сохранения gist произошла ошибка'
+
+  services:
+    gist_question:
+      gist_params:
+        description: "Вопрос к тесту %{test_title} из TestGuru"
+      github_access_token:
+        not_found: 'GitHub токен не найден'
+        invalid: 'GitHub токен не действителен'
+      github_not_available: 'Ресурс GitHub не отвечает. Повторите попытку позже.'
+
+
 
 
   footer:

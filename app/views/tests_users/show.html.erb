@@ -14,5 +14,12 @@
       <%= b.label %>
     </p>
   <% end %>
+
+  <p><%= link_to t('.create_github_gist'), gists_path(test_user_id: @test_user.id), method: :post %></p>
+
+  <% if @responce.present? %>
+    <%= render 'gist_error_messages', object: @responce %>
+  <% end %>
+
   <p><%= f.submit t('tests_users.show.reply'), class: "btn btn-primary" %></p>
 <% end %>
